@@ -16,5 +16,5 @@ A multi-node [Slurm](https://slurm.schedmd.com/) batch-compute cluster.
 ### [:material-kubernetes: Kubernetes](platforms/kubernetes.md)
 A fully-featured [Kubernetes](https://kubernetes.io/) container orchestration cluster.
 
-### [:fontawesome-brands-python: Jupyterhub](kubernetes-applications/jupyterhub.md)
+### [:fontawesome-brands-python: Jupyterhub](platforms/jupyterhub.md)
 A multi-user Jupyterhub on Kubernetes, powered by [zero-to-jupyterhub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).
