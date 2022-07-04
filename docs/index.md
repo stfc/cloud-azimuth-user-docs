@@ -1,8 +1,7 @@
-# Cloud Science Platforms
-
-
-
-## Platforms
+---
+hide:
+  - footer
+---
 
 ### [:fontawesome-solid-computer: Linux Workstation](platforms/linux-workstation.md)
 A versatile Linux compute instance, which can be accessed using a web-browser.

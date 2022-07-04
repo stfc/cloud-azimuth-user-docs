@@ -1,5 +1,10 @@
 site_name: Cloud Science Platforms
+repo_url: https://github.com/m-bull/azimuth-user-docs
+copyright: |
+  Copyright &copy; 2016-2022 StackHPC
 theme:
+  features:
+    - navigation.tracking
   name: material
   icon:
     logo: material/lightbulb-on
@@ -26,4 +31,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
