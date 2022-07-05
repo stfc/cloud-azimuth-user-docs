@@ -1,13 +1,30 @@
-site_name: Cloud Science Platforms
+site_name: Azimuth Science Platforms
 repo_url: https://github.com/stackhpc/azimuth-user-docs
 copyright: |
-  Copyright &copy; 2016-2022 StackHPC
+  Copyright &copy; 2016-2022 StackHPC</br>
+  <a href="https://www.flaticon.com/free-icons/sextant" title="sextant icons">Sextant icons created by Nikita Golubev - Flaticon</a>
+edit_uri: ''
+nav:
+  - 'Home': 'index.md'
+  - 'Platforms':
+    - 'Linux Workstation': 'platforms/linux-workstation.md'
+    - 'Jupyter Notebook': 'platforms/jupyter-notebook.md'
+    - 'Slurm': 'platforms/slurm.md'
+    - 'Kubernetes': 'platforms/kubernetes.md'
+  - 'Kubernetes Applications': 
+    - 'Jupyterhub': 'platforms/kubernetes-applications/jupyterhub.md'
+  - 'Usage': 'usage/usage.md'
+  - 'Advanced':
+    - 'Machines': 'advanced/machines.md'
+    - 'Volumes': 'advanced/volumes.md'
+
 theme:
   features:
     - navigation.tracking
   name: material
   icon:
-    logo: material/lightbulb-on
+    logo: custom/sextant_white
+  custom_dir: overrides
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -27,10 +44,18 @@ theme:
       primary: blue grey
       accent: deep purple
 markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
+      
