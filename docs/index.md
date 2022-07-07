@@ -5,6 +5,8 @@ hide:
 
 Azimuth science platforms are powered by [Azimuth](https://github.com/stackhpc/azimuth/), a self-service portal for managing cloud resources with a particular focus on simplifying the use of cloud for scientific computing, high-performance computing (HPC) and artificial intelligence (AI).
 
+If this is your first visit to the Azimuth portal, or you would just like to know more about how to get access to a cloud project - [get started](getting-started/getting-started.md) with Azimuth science platforms.
+
 ## Platforms
 Platforms can be deployed directly from the Azimuth Platforms interface.
 ### [:fontawesome-solid-computer: Linux Workstation](platforms/linux-workstation.md)
@@ -21,5 +23,5 @@ A fully-featured [Kubernetes](https://kubernetes.io/) container orchestration cl
 
 ## Kubernetes Applications
 Kubernetes Applications require an existing [Kubernetes cluster](platforms/kubernetes.md) before they can be deployed.
-### [:fontawesome-brands-python: Jupyterhub](platforms/jupyterhub.md)
+### [:fontawesome-brands-python: Jupyterhub](platforms/kubernetes-applications/jupyterhub.md)
 A multi-user Jupyterhub on Kubernetes, powered by [zero-to-jupyterhub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).

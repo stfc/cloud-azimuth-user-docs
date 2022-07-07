@@ -6,6 +6,7 @@ copyright: |
 edit_uri: ''
 nav:
   - 'Home': 'index.md'
+  - 'Getting Started': 'getting-started/getting-started.md'
   - 'Platforms':
     - 'Linux Workstation': 'platforms/linux-workstation.md'
     - 'Jupyter Notebook': 'platforms/jupyter-notebook.md'
