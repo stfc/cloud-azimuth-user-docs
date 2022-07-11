@@ -23,8 +23,11 @@ A fully-featured [Kubernetes](https://kubernetes.io/) container orchestration cl
 
 ## Kubernetes Applications
 Kubernetes Applications require an existing [Kubernetes cluster](platforms/kubernetes.md) before they can be deployed.
-### [:fontawesome-brands-python: Jupyterhub](platforms/kubernetes-applications/jupyterhub.md)
-A multi-user Jupyterhub on Kubernetes, powered by [zero-to-jupyterhub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).
+### [:fontawesome-brands-python: JupyterHub](platforms/kubernetes-applications/jupyterhub.md)
+A multi-user JupyterHub on Kubernetes, powered by [zero-to-jupyterhub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).
 
 #### [:material-expansion-card-variant: GPU-enabled Jupyter Notebooks](platforms/kubernetes-applications/gpu-enabled-notebooks.md)
-Launch a GPU-enabled Jupyter Notebook using JupyterHub
+Launch a GPU-enabled Jupyter Notebook using JupyterHub.
+
+### [:fontawesome-brands-python: DaskHub](platforms/kubernetes-applications/daskhub.md)
+A multi-user DaskHub on Kubernetes. [Dask](https://docs.dask.org/en/stable/) is a flexible library for parallel computing in Python.
