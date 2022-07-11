@@ -23,10 +23,15 @@ A [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluste
 !!! Info
     
     All Kubernetes clusters must contain a least one node group of [Kubernetes worker nodes](https://kubernetes.io/docs/concepts/architecture/nodes/).
+
+!!! Info
+    
+    If you are creating a Kubernetes cluster to use with [GPU-enabled Jupyter notebooks](kubernetes-applications/gpu-enabled-notebooks.md), be sure to select a Node Size that contains GPUs.
+
 |**Option**                                | Explanation|
 |------------------------------------------|---------------------------|
 |**Name**                         | A name to identify the node group. Names are available inside the Kubernetes cluster as [node labels](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#built-in-node-labels).|
-|**Node Size**                      | The size of the cloud instances that form the node group. The options in this menu are set by the cloud operator, and the number of CPUs and quantity of RAM are displayed for each size.|
+|**Node Size**                      | The size of the cloud instances that form the node group. The options in this menu are set by the cloud operator, and the number of CPUs and quantity of RAM are displayed for each size. Cloud sizes may also dictate access to other hardware, such as GPUs or high-speed network interfaces.|
 |**Enable autoscaling for this node group?**                      | When autoscaling is **selected**, the amount of cloud instances in the node group will increase when existing resources are not sufficient to run the requested amount of pod resources. As the amount of requested pod resources declines, cloud instances are removed from the node group.<br/>When autoscaling is **not selected**, the size of the node group remains fixed.|
 |**Node Count**                      | When autoscaling is **selected**, the minimum and maximum amount of cloud instances to allow in this node group. When autoscaling is **not selected**, the fixed amount of cloud instances in this node group. |
 

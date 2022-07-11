@@ -25,3 +25,6 @@ A fully-featured [Kubernetes](https://kubernetes.io/) container orchestration cl
 Kubernetes Applications require an existing [Kubernetes cluster](platforms/kubernetes.md) before they can be deployed.
 ### [:fontawesome-brands-python: Jupyterhub](platforms/kubernetes-applications/jupyterhub.md)
 A multi-user Jupyterhub on Kubernetes, powered by [zero-to-jupyterhub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).
+
+#### [:material-expansion-card-variant: GPU-enabled Jupyter Notebooks](platforms/kubernetes-applications/gpu-enabled-notebooks.md)
+Launch a GPU-enabled Jupyter Notebook using JupyterHub

@@ -13,7 +13,9 @@ nav:
     - 'Slurm': 'platforms/slurm.md'
     - 'Kubernetes': 'platforms/kubernetes.md'
   - 'Kubernetes Applications': 
-    - 'Jupyterhub': 'platforms/kubernetes-applications/jupyterhub.md'
+    - 'Jupyterhub': 
+      - 'Deploying JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
+      - 'GPU-Enabled Notebooks': 'platforms/kubernetes-applications/gpu-enabled-notebooks.md'
   - 'Usage': 'usage/usage.md'
   - 'Advanced':
     - 'Machines': 'advanced/machines.md'
