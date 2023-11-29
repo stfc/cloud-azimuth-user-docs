@@ -31,11 +31,11 @@ The EESSI demo environments are available in the [EESSI demo Github repository](
 
 ```git clone https://github.com/EESSI/eessi-demo.git```
 
-As an example, we can run the TensorFlow demo environment to ensure the environment is setup correctly. It is first neccessary to source the EESSI bash environment, to do this please run the following command.
+As an example to test EESSI, we can run the TensorFlow demo environment. It is first neccessary to source the EESSI bash environment, to do this please run the following command.
 
 ```source /cvmfs/pilot.eessi-hpc.org/versions/2021.12/init/bash```
 
-This script will initialize the Lua modules for the Software layer in the EESSI stack and source the neccessary environment variables for you to interact with them. To assess whether the script completed successfully, you can try run the ``module avail`` command to list all modules avaliable to you in the environment. A successful initialization should result in an output resembling the one below.
+This script will initialize the Lua modules for the Software layer in the EESSI stack and source the neccessary environment variables. To get started with EESSI, the ``module avail`` command will list all modules avaliable to you in the environment. A successful initialization should result in an output resembling the one below.
 
 ```
 [EESSI pilot 2021.12] $ module avail
@@ -46,9 +46,9 @@ This script will initialize the Lua modules for the Software layer in the EESSI 
    Bazel/3.6.0-GCCcore-9.3.0
    ...
 ```
-Now you have a functioning environment, you can begin experimenting with the software included in EESSI. Enter the directory of the EESSI-demo repository we cloned earlier, then enter the TensorFlow directory. 
+With a functioning environment, it is possible to begin experimenting with the software included in EESSI. Enter the directory of the EESSI-demo repository we cloned earlier, then enter the TensorFlow directory. 
 
-This TensorFlow project contains a demonstration 4-layer neural network model which runs against the MNIST digits dataset. You can tinker with the ``TensorFlow-2.x_mnist-test.py`` script to setup a different model architecture as you like. To run the default configuration, you can execute the ``run.sh`` script inside the directory, which should produce an evaluation output like below.
+This TensorFlow project contains a demonstration 4-layer neural network model which runs against the MNIST digits dataset. It is possible to tinker with the ``TensorFlow-2.x_mnist-test.py`` script to setup a different model architecture or leave it in the default configuration. To initialise the model, execute the ``run.sh`` script inside the directory, which should produce an evaluation output like below.
 
 ```
 [EESSI pilot 2021.12] $ ./run.sh 
@@ -74,9 +74,9 @@ Guides on how to utilise EESSI further can be found [here](http://www.eessi.io/d
 
 #### Podman
 
-Podman is a container framework provided in the Workstation appliance for the purpose of installing, managing and developing OCI containers. We **strongly** recommend installing any software you wish to add to the your Workstation via podman, as software installed via the package manager or otherwise located outside of ``/home`` will be removed during image upgrades. In-place upgrades are not supported in the Workstation appliance as to reduce dependancy issues between migrations, instead your ``/home`` directory is kept as a seperate partition and re-mounted after the Workstation has been re-imaged.
+Podman is a container framework provided in the Workstation appliance for the purpose of installing, managing and developing OCI containers. It is **strongly** recommended to install any software for the Workstation appliance via Podman, as software installed via the package manager or otherwise located outside of ``/home`` will be removed during image upgrades. In-place upgrades are not supported in the Workstation appliance as to reduce dependancy issues between migrations, instead the ``/home`` directory is kept as a seperate partition and re-mounted after the Workstation has been re-imaged.
 
-The podman CLI is syntatically similar to the Docker CLI. For instance, we can build and deploy a Jupyter notebook as an example using Podman and access our deployment in the web interface:
+The podman CLI is syntatically similar to the Docker CLI. For instance, a Jupyter notebook with an accessible web interface can be deployed as an example using Podman:
 
 To begin, clone the Jupyter notebook docker repository and navigate to the notebook directory as below:
 
@@ -94,65 +94,16 @@ Start the Jupyter notebook container:
 
 ```podman run --name notebook -p 8888:8888 jupyter-notebook```
 
-Once the container has finished starting Jupyter notebook will print an access link to the web interface in the console, after navigating to this link in your web browser you should see the Jupyter notebook web interface as shown below:
+Once the container has finished starting Jupyter notebook will print an access link to the web interface in the console, after navigating to this link in a web browser the Jupyter notebook web interface should resemble the one shown below:
 
 ![Jupyter notebook web interface](/docs/assets/images/jupyter-notebook-interface.png)
 
-As this is a base notebook it won't contain many applications for you to explore, you can find more notebooks to build in the [docker-stacks](https://github.com/jupyter/docker-stacks) repository and re-use our previous steps. If setting up the notebook didn't produce any unexpected behaviour, podman is running correctly in your Workstation appliance. For more advanced information about using podman, you can check out the docs [here](https://docs.podman.io/en/latest/).
+As this is a base notebook it won't contain many applications to explore, more notebooks to build can be found in the [docker-stacks](https://github.com/jupyter/docker-stacks) repository and may have a similar setup procedure to the base notebook. For more advanced information about using podman, the podman docs can be found [here](https://docs.podman.io/en/latest/).
 
 #### Apptainer
 
-Apptainer is another container framework included in the Workstation appliance commonly used in HPC applications, we can use it in a similar way to Podman as both frameworks support OCI containers. We can pull OCI images from Docker Hub similar to Podman:
+Apptainer is another container framework included in the Workstation appliance commonly used in HPC applications, It can be used in a similar way to Podman as both frameworks support OCI containers. OCI images from Docker Hub can be pulled similar to Podman:
 
 ```apptainer run docker://jupyter/base-notebook```
 
 The Apptainer console log should contain an access link to the dashboard like Podman.
-
-#### Custom Images
-
-Building custom images is supported in Azimuth and there may be several reasons why you want to do this. For introductory purposes we will focus on only adding a single program in this guide. There may be cases where you want to modify the community images more than this, we will briefly touch on upstreaming images and 'Continuous Integration' at the end of this guide.
-
-You can build your own custom images for Azimuth using the 'azimuth-images' repository as a base. To begin exploring, clone the repository as below:
-
-```git clone https://github.com/stackhpc/azimuth-images.git```
-
-You'll notice several different directories here each with their own purpose, for now we wil focus on the ``ansible`` directory. This directory contains playbooks that add configuration and packages to the 'base' images. In the case of a Workstation appliance, base images will typically be an empty Ubuntu image, we use these playbooks to add VNC/Guacamole configuration, Podman and Zenith support allowing these images to be used in the Azimuth ecosystem.
-
-In the ``roles`` directory you can see each indivdual component modularised as Ansible roles, in this architecture we can re-purpose code that we may use on multiple different applicances/images (e.g. Zenith). To make a direct change to the Workstation appliance, we can edit the ``linux-webconsole`` role. To have Ansible install 'GNU Octave' as an example, we need to add a task to the `main.yml` playbook as below:
-
-```
-- name: Install Octave
-  apt:
-    name: octave
-    state: present
-```
-Now we have modifed the playbook to install another package, we can use 'Packer' to generate the image. Using Packer requires that you have access to a cloud with a floating IP. Assuming this is the case, you need to define a Packer configuration file for the cloud you're building on. The configuration file used for building images on Sausage Cloud (sausage.pkvars.hcl) looks like this:
-
-```
-source_image_name = "packer-d32bd27c-3b34-4fab-b8ad-e491147a60da"
-
-network = "4ca2399f-3040-4686-82fa-e99bd50d215a"
-floating_ip = "842fd1f3-0e6f-42e2-aa42-045cf58535b9"
-security_groups = ["default"]
-
-flavor = "cumberland"
-distro_name = "ubuntu-jammy"
-ssh_username = "ubuntu"
-volume_size = 20
-```
-To begin the Packer build process for the Workstation image, you need to run the following command where PATH_TO_VARS_FILE is the location of your Packer configuration file:
-
-```
-packer build --on-error=ask -var-file=$PATH_TO_VARS_FILE packer/linux-desktop.pkr.hcl
-```
-You will see the build process begin in the output, eventually during runtime you should notice the Ansible task we wrote earlier completing successfully. Installing the desktop environment will take a long time, expect this build process to take over 30 minutes depending on your hardware. After build completion, you will notice the OpenStack image ID printed to the console by Packer. To use this in your Azimuth configuration, you will need to declare the ``azimuth_caas_stackhpc_workstation_image`` variable and assign the image ID to this variable in your ``azimuth-config`` repository.
-
-##### Upstream contributions
-
-If you believe your changes will be valuable to other users, you can contribute your changes to the StackHPC community images [repository](https://github.com/stackhpc/azimuth-images). To do this, you will need to commit, push and create a pull request. (Hint: If you've followed the guide this far, your changes are already in the correct repository and ready to be pushed!)
-
-##### The role of Continuous Integration
-
-You may have wondered during this guide how changes you push to GitHub are built, tested and distributed. GitHub Actions are utilised in the community images repoistory for building, testing and publishing new images continuously on new changes. The ``.github`` directory in the community images repository contains all the CI configuration used. The ``pr.yml`` GitHub workflow is the most relevent workflow for our particular use case. Following the upstream guide above, if you made a pull request you'll notice a new workflow being initialised, this workflow will build images relevent to the Ansible modified to ensure your changes do not contain fatal Ansible syntax errors. (Note: This stage of the CI may not always pick up broken changes, such as the case of broken packages).
-
-If your changes were approved and passed the build workflow, you can now merge it into the 'main' branch and new build workflow will be triggered on merging. Following a successful build workflow, the image created will not be deleted as it is in the pull request workflow. To make this image public, it is required to create a GitHub tag, which will trigger the ``tag.yml`` workflow and the manifest for the new images built will be made public for new deployments.
