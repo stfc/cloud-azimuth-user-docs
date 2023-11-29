@@ -76,7 +76,7 @@ Guides on how to utilise EESSI further can be found [here](http://www.eessi.io/d
 
 Podman is a container framework provided in the Workstation appliance for the purpose of installing, managing and developing OCI containers. We **strongly** recommend installing any software you wish to add to the your Workstation via podman, as software installed via the package manager or otherwise located outside of ``/home`` will be removed during image upgrades. In-place upgrades are not supported in the Workstation appliance as to reduce dependancy issues between migrations, instead your ``/home`` directory is kept as a seperate partition and re-mounted after the Workstation has been re-imaged.
 
-The podman is syntatically similar to the Docker CLI. For instance, we can build and deploy a Jupyter notebook as an example using Podman and access our deployment in the web interface:
+The podman CLI is syntatically similar to the Docker CLI. For instance, we can build and deploy a Jupyter notebook as an example using Podman and access our deployment in the web interface:
 
 To begin, clone the Jupyter notebook docker repository and navigate to the notebook directory as below:
 
