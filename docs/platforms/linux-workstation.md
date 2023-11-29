@@ -25,7 +25,7 @@ The workstation instance has a cloud volume (or virtual disk) available at `/dat
 A [Grafana](https://grafana.com/oss/grafana/) dashboard for system monitoring is included in the platform, and is accessible from the platforms page. General current and historical system information is visible.
 
 #### EESSI
-The [EESSI](http://www.eessi.io/docs/) suite of software is included in the Workstation appliance. This suite includes a diverse collection of toolkits and modules for research computing purposes. More details on the architecture of the EESSI suite can be found [here](http://www.eessi.io/docs/overview/).
+The [EESSI](http://www.eessi.io/docs/) suite of software is included in the Workstation appliance. EESSI includes a diverse collection of toolkits and modules for research computing purposes.
 
 To assess whether the EESSI suite is functioning correctly, you can run some of their demo environments avaliable in the EESSI demo [Github](https://github.com/EESSI/eessi-demo/tree/main) repository. You can clone the repository using the command below.
 
