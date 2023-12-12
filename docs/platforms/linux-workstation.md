@@ -104,8 +104,8 @@ See the [Podman docs](https://docs.podman.io/en/latest/) for further information
 
 #### Apptainer
 
-Apptainer is another container framework commonly used in HPC applications which is also included in the Workstation appliance. It can be used in a similar way to Podman as both frameworks support OCI containers. OCI images from Docker Hub can be pulled with:
+Apptainer is another container framework commonly used in HPC applications which is also included in the Workstation appliance. It can be used in a similar way to Podman as both frameworks support OCI containers. For example, OCI images from Docker Hub can be pulled with:
 
 ```apptainer run docker://jupyter/base-notebook```
 
-The Apptainer console log should contain an access link to the notebook interface in the same manner as the above Podman example.
+Similiar to the previous Podman example, the Apptainer console log should contain an access link to the notebook interface.
