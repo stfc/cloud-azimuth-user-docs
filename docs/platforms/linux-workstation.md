@@ -94,7 +94,7 @@ Start the Jupyter notebook container:
 
 ```podman run --name notebook -p 8888:8888 jupyter-notebook```
 
-Once the container has started, a link providing access to the web interface will be printed to the console.  Navigating to this link in a web browser should present a Jupyter notebook web interface resembling the one shown below:
+Once the container has started, a link providing access to the web interface will be printed to the console. Navigating to this link in a web browser should present a Jupyter notebook web interface resembling the one shown below:
 
 ![Jupyter notebook web interface](/docs/assets/images/jupyter-notebook-interface.png)
 
@@ -104,7 +104,7 @@ See the [Podman docs](https://docs.podman.io/en/latest/) for further information
 
 #### Apptainer
 
-Apptainer is another container framework commonly used in HPC applications and which is also included in the Workstation appliance. It can be used in a similar way to Podman as both frameworks support OCI containers. OCI images from Docker Hub can be pulled with:
+Apptainer is another container framework commonly used in HPC applications which is also included in the Workstation appliance. It can be used in a similar way to Podman as both frameworks support OCI containers. OCI images from Docker Hub can be pulled with:
 
 ```apptainer run docker://jupyter/base-notebook```
 
