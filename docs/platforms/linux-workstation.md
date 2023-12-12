@@ -25,13 +25,13 @@ The workstation instance has a cloud volume (or virtual disk) available at `/dat
 A [Grafana](https://grafana.com/oss/grafana/) dashboard for system monitoring is included in the platform, and is accessible from the platforms page. General current and historical system information is visible.
 
 #### EESSI
-The [EESSI](http://www.eessi.io/docs/) suite of software is included in the Workstation appliance. EESSI includes a diverse collection of toolkits and modules for research computing purposes.
+The [EESSI](http://www.eessi.io/docs/) software suite is included in the Workstation appliance. EESSI includes a diverse collection of toolkits and modules for research computing purposes.
 
-The EESSI demo environments are available in the [EESSI demo Github repository](https://github.com/EESSI/eessi-demo), which can be cloned using the command below:
+A collection of EESSI demo environments are available in the [EESSI demo Github repository](https://github.com/EESSI/eessi-demo), which can be cloned using the command below:
 
 ```git clone https://github.com/EESSI/eessi-demo.git```
 
-As an example to test EESSI, we can run the TensorFlow demo environment. It is first neccessary to source the EESSI bash environment, to do this please run the following command.
+The TensorFlow demo in this repository is a illustrative example of how to make use of EESSI. To run this demo, it is first neccessary to source the EESSI bash environment using the following command:
 
 ```source /cvmfs/pilot.eessi-hpc.org/versions/2021.12/init/bash```
 
@@ -74,19 +74,19 @@ Guides on how to utilise EESSI further can be found [here](http://www.eessi.io/d
 
 #### Podman
 
-Podman is a container framework provided in the Workstation appliance for the purpose of installing, managing and developing OCI containers. It is **strongly** recommended to install any software for the Workstation appliance via Podman, as software installed via the package manager or otherwise located outside of ``/home`` will be removed during image upgrades. In-place upgrades are not supported in the Workstation appliance as to reduce dependancy issues between migrations, instead the ``/home`` directory is kept as a seperate partition and re-mounted after the Workstation has been re-imaged.
+Podman is a container framework provided in the Workstation appliance for the purpose of building and running OCI containers. It is **strongly** recommended to install any software for the Workstation appliance via Podman, as software installed via the package manager or otherwise located outside of ``/home`` will be removed during image upgrades. In-place upgrades are not supported in the Workstation appliance to avoid dependancy issues between migrations, instead the ``/home`` directory is kept as a seperate partition and re-mounted after the Workstation has been re-imaged.
 
-The podman CLI is syntatically similar to the Docker CLI. For instance, a Jupyter notebook with an accessible web interface can be deployed as an example using Podman:
+The Podman CLI is syntatically similar to the Docker CLI. For example, a Jupyter notebook with an accessible web interface can be deployed using Podman via the following commands.
 
 To begin, clone the Jupyter notebook docker repository and navigate to the notebook directory as below:
 
 ```git clone https://github.com/jupyter/docker-stacks.git && cd docker-stacks/images/base-notebook```
 
-Build the Jupyter notebook image, and select the docker.io remote when promoted by podman:
+Build the Jupyter notebook image, and select the docker.io remote when promoted by Podman:
 
 ```podman build . --tag jupyter-notebook```
 
-Query the list locally available images to ensure the Jupyter notebook built correctly:
+Query the list of locally available images to ensure the Jupyter notebook container image was built correctly:
 
 ```podman image ls | grep jupyter-notebook```
 
@@ -94,16 +94,18 @@ Start the Jupyter notebook container:
 
 ```podman run --name notebook -p 8888:8888 jupyter-notebook```
 
-Once the container has finished starting Jupyter notebook will print an access link to the web interface in the console, after navigating to this link in a web browser the Jupyter notebook web interface should resemble the one shown below:
+Once the container has started, a link providing access to the web interface will be printed to the console.  Navigating to this link in a web browser should present a Jupyter notebook web interface resembling the one shown below:
 
 ![Jupyter notebook web interface](/docs/assets/images/jupyter-notebook-interface.png)
 
-As this is a base notebook it won't contain many applications to explore, more notebooks to build can be found in the [docker-stacks](https://github.com/jupyter/docker-stacks) repository and may have a similar setup procedure to the base notebook. For more advanced information about using podman, the podman docs can be found [here](https://docs.podman.io/en/latest/).
+As this is a base notebook it won't contain many applications to explore, more notebooks to build can be found in the [docker-stacks](https://github.com/jupyter/docker-stacks) repository and may have a similar setup procedure to the base notebook.
+
+See the [Podman docs](https://docs.podman.io/en/latest/) for further information on using Podman.
 
 #### Apptainer
 
-Apptainer is another container framework included in the Workstation appliance commonly used in HPC applications, It can be used in a similar way to Podman as both frameworks support OCI containers. OCI images from Docker Hub can be pulled similar to Podman:
+Apptainer is another container framework commonly used in HPC applications and which is also included in the Workstation appliance. It can be used in a similar way to Podman as both frameworks support OCI containers. OCI images from Docker Hub can be pulled with:
 
 ```apptainer run docker://jupyter/base-notebook```
 
-The Apptainer console log should contain an access link to the dashboard like Podman.
+The Apptainer console log should contain an access link to the notebook interface in the same manner as the above Podman example.
