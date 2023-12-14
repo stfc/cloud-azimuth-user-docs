@@ -25,3 +25,25 @@ The Slurm platform provides a multi-node HPC environment based on the [Slurm wor
 A [Grafana](https://grafana.com/oss/grafana/) dashboard for system monitoring is included in the platform, and is accessible from the platforms page. General current and historical system information is visible.
 
 Additionally, Open OnDemand presents monitoring dashboards for each Slurm job.
+
+#### Root access
+
+To get passwordless `sudo` to the login node, SSH as the `rocky` user instead of the `azimuth` user shown on the platform's details page.
+
+Other nodes can also be accessed as `rocky` by jumping through the login node, e.g.:
+
+    ssh -J rocky@$LOGIN_ADDR rocky@$NODE_ADDR
+
+where `$LOGIN_ADDR` is the login node's address shown on the platform's details page and the other node's addresses can be retrieved from the `/etc/hosts` file on the login node, e.g.:
+
+    ssh -J rocky@$LOGIN_ADDR cat /etc/hosts
+
+#### Additional software
+
+Software installed directly via `sudo` will be lost when the platform is upgraded, as upgrades are performed by reimaging all nodes with a new image.
+
+Where possible, it is preferable to package additional software for use via [apptainer](https://apptainer.org/) which is installed on all Slurm platforms. This supports both SIF and Docker/OCI container formats.
+
+Some software is also available via the EESSI pilot repository - follow instructions from [here](https://www.eessi.io/docs/using_eessi/setting_up_environment/).
+
+If these methods are not appropriate and the software has wide applicability, consider making a PR to the [Slurm appliance repository](https://github.com/stackhpc/caas-slurm-appliance) which builds images for the Slurm platforms. Additional Ansible tasks could be added to the [extras.yml](https://github.com/stackhpc/ansible-slurm-appliance/blob/main/ansible/extras.yml) playbook.
