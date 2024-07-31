@@ -28,15 +28,12 @@ Additionally, Open OnDemand presents monitoring dashboards for each Slurm job.
 
 #### Root access
 
-To get passwordless `sudo` to the login node, SSH as the `rocky` user instead of the `azimuth` user shown on the platform's details page.
+The `azimuth` user has passwordless sudo. Only this user can ssh between nodes so to get
+sudo access to a non-login node ssh as `azimuth` from the login node first, then use sudo.
 
-Other nodes can also be accessed as `rocky` by jumping through the login node, e.g.:
+Note that node names can be retrieved from the `/etc/hosts` file on the login node, e.g.:
 
-    ssh -J rocky@$LOGIN_ADDR rocky@$NODE_ADDR
-
-where `$LOGIN_ADDR` is the login node's address shown on the platform's details page and the other node's addresses can be retrieved from the `/etc/hosts` file on the login node, e.g.:
-
-    ssh -J rocky@$LOGIN_ADDR cat /etc/hosts
+    cat /etc/hosts
 
 #### Additional software
 
