@@ -43,4 +43,6 @@ Where possible, it is preferable to package additional software for use via [app
 
 Some software is also available via the EESSI pilot repository - follow instructions from [here](https://www.eessi.io/docs/using_eessi/setting_up_environment/).
 
-If these methods are not appropriate and the software has wide applicability, consider making a PR to the [Slurm appliance repository](https://github.com/stackhpc/caas-slurm-appliance) which builds images for the Slurm platforms. Additional Ansible tasks could be added to the [extras.yml](https://github.com/stackhpc/ansible-slurm-appliance/blob/main/ansible/extras.yml) playbook.
+If these methods are not appropriate and the software has wide applicability, consider making a PR to the
+[Ansible Slurm Appliance](https://github.com/stackhpc/ansible-slurm-appliance), which contains code for building
+images and configuring Slurm that is used by Azimuth.
