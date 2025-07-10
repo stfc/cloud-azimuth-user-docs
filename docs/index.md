@@ -3,7 +3,7 @@ hide:
   - footer
 ---
 
-Azimuth science platforms are powered by [Azimuth](https://github.com/azimuth-cloud/azimuth/), a self-service portal for managing cloud resources with a particular focus on simplifying the use of cloud for scientific computing, high-performance computing (HPC) and artificial intelligence (AI).
+STFC's Azimuth platform is powered by [Azimuth](https://github.com/azimuth-cloud/azimuth/), a self-service portal for managing cloud resources with a particular focus on simplifying the use of cloud for scientific computing, high-performance computing (HPC) and artificial intelligence (AI).
 
 If this is your first visit to the Azimuth portal, or you would just like to know more about how to get access to a cloud project - [get started](getting-started/getting-started.md) with Azimuth science platforms.
 
