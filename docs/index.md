@@ -34,14 +34,16 @@ A multi-user JupyterHub on Kubernetes, powered by [zero-to-jupyterhub](https://z
 A multi-user DaskHub on Kubernetes. [Dask](https://docs.dask.org/en/stable/) is a flexible library for parallel computing in Python.
 
 ### [:simple-argo: ArgoCD](platforms/kubernetes-applications/argocd.md)
-WIP
+[ArgoCD](https://argo-cd.readthedocs.io/en/stable/) provides a declarative GitOps Continuous Delivery (CD) platform for Kubernetes clusters.
 
 ### [:logos-binderhub: BinderHub](platforms/kubernetes-applications/binderhub.md)
-WIP
+[BinderHub](https://binderhub.readthedocs.io/en/latest/) allows a reproducable set of Jupyter notebooks to be deployed onto a JupyterHub deployment on a Kubernetes cluster.
 
-### [:simple-huggingface: HuggingFace-LLM](docs/platforms/kubernetes-applications/huggingface-llm.md)
-WIP
+### [:simple-huggingface: HuggingFace-LLM](platforms/kubernetes-applications/huggingface-llm.md)
+A generative AI chatbot service backed by a [HuggingFace](https://huggingface.co/) model, exposed via a convinient web interface.
 
 ### [:logos-kubeflow: KubeFlow](platforms/kubernetes-applications/kubeflow.md)
-WIP
+[KubeFlow](https://www.kubeflow.org/) is a machine learning toolkit for Kubernetes clusters, using Jupyter Notebooks and [TensorFlow](https://www.tensorflow.org/).
 
+<!-- TODO:
+Keycloak -->

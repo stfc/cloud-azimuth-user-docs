@@ -13,6 +13,8 @@ nav:
       - 'Deploying JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
     - 'DaskHub':
       - 'Deploying DaskHub': 'platforms/kubernetes-applications/daskhub.md'
+    - 'ArgoCD':
+      - 'Deploying ArgoCD': 'platforms/kubernetes-applications/argocd.md'
     - 'BinderHub':
       - 'Deploying Binderhub': 'platforms/kubernetes-applications/binderhub.md'
     - 'KubeFlow':

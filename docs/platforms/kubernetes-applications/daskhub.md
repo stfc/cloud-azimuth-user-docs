@@ -4,7 +4,7 @@ hide:
 ---
 !!! Warning
 
-    Deploying Jupyterhub requires an existing [Kubernetes cluster](../kubernetes.md).
+    Deploying DaskHub requires an existing [Kubernetes cluster](../kubernetes.md).
 
 ### Introduction
 [DaskHub](https://github.com/dask/helm-chart/tree/main/daskhub) provides a multi-user, Dask-Gateway enabled JupyterHub.
@@ -14,7 +14,7 @@ The DaskHub Kubernetes application is provided as part of the Azimuth science pl
 The Applications dashboard shows both installed Applications and a Catalog of applications available for installation. The applications in the catalog are determined by your cloud operator. To learn more about the Applications dashboard, visit the Kubeapps [documentation](https://kubeapps.dev/docs/latest/howto/dashboard/).
 
 
-### Launch process
+### Launch Process
 !!! Warning
 
     Before deploying DaskHub, ensure that you are working in the correct Kubernetes namespace, which is likely to be "default" unless you are an advanced user. View and change your current namespace using the "Current Context" dialog in the top-right of the Applications dashboard.

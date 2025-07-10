@@ -4,7 +4,7 @@ hide:
 ---
 !!! Warning
 
-    Deploying Jupyterhub requires an existing [Kubernetes cluster](../kubernetes.md).
+    Deploying JupyterHub requires an existing [Kubernetes cluster](../kubernetes.md).
 
 ### Introduction
 [JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/) allows users to interact with a computing environment through a webpage. As most devices have access to a web browser, JupyterHub makes it is easy to provide and standardize the computing environment for a group of people (e.g., for a class of students or an analytics team). JupyterHub is a web-interface through which many "singleuser" Jupyter notebooks (one per user) may be launched.
@@ -14,7 +14,7 @@ The JupyterHub Kubernetes application is provided as part of the Azimuth science
 The Applications dashboard shows both installed Applications and a Catalog of applications available for installation. The applications in the catalog are determined by your cloud operator. To learn more about the Applications dashboard, visit the Kubeapps [documentation](https://kubeapps.dev/docs/latest/howto/dashboard/).
 
 
-### Launch process
+### Launch Process
 !!! Warning
 
     Before deploying Jupyterhub, ensure that you are working in the correct Kubernetes namespace, which is likely to be "default" unless you are an advanced user. View and change your current namespace using the "Current Context" dialog in the top-right of the Applications dashboard.
