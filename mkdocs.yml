@@ -1,22 +1,24 @@
-site_name: Azimuth Science Platforms
+site_name: STFC Azimuth Science Platform
 repo_url: https://github.com/azimuth-cloud/azimuth-user-docs
 copyright: |
-  Copyright &copy; 2024 Azimuth</br>
+  Copyright &copy; 2025 Science and Technology Facilities Council</br>
 edit_uri: ''
 nav:
   - 'Home': 'index.md'
   - 'Getting Started': 'getting-started/getting-started.md'
   - 'Platforms':
-    - 'Linux Workstation': 'platforms/linux-workstation.md'
-    - 'Jupyter Notebook': 'platforms/jupyter-notebook.md'
-    - 'Slurm': 'platforms/slurm.md'
     - 'Kubernetes': 'platforms/kubernetes.md'
   - 'Kubernetes Applications': 
     - 'JupyterHub': 
       - 'Deploying JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
-      - 'GPU-Enabled Notebooks': 'platforms/kubernetes-applications/gpu-enabled-notebooks.md'
     - 'DaskHub':
       - 'Deploying DaskHub': 'platforms/kubernetes-applications/daskhub.md'
+    - 'BinderHub':
+      - 'Deploying Binderhub': 'platforms/kubernetes-applications/binderhub.md'
+    - 'KubeFlow':
+      - 'Deploying KubeFlow': 'platforms/kubernetes-applications/kubeflow.md'
+    - 'HuggingFace LLM':
+      - 'Deploying HuggingFace LLM': 'platforms/kubernetes-applications/huggingface-llm.md'
   - 'Usage': 'usage/usage.md'
   - 'Advanced':
     - 'Machines': 'advanced/machines.md'
@@ -26,8 +28,9 @@ theme:
   features:
     - navigation.tracking
   name: material
-  logo: assets/images/azimuth-logo-white.png
-  favicon: assets/images/azimuth-logo-white.png
+  custom_dir: docs/overrides
+  logo: assets/images/Cloud-Logo-Square.png
+  favicon: assets/images/UKRI_STFC_Square_RGB.png
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -35,8 +38,8 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-      primary: blue grey
-      accent: deep purple
+      primary: custom
+      accent: custom
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
@@ -44,8 +47,12 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-      primary: blue grey
-      accent: deep purple
+      primary: custom
+      accent: custom
+
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - tables
   - admonition
@@ -53,8 +60,11 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - docs/overrides/.icons
 
 plugins:
   - git-revision-date-localized:
