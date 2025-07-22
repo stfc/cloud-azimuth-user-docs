@@ -10,14 +10,14 @@ If this is your first visit to the Azimuth portal, or you would just like to kno
 ## Disclaimer
 - The STFC Cloud Azimuth platform is still in development, therefore data loss could occur, and it is recommended that no data be stored on there that you do not wish to lose.
 - Updates/patches of the platform may come at short notice, but we endeavour to give 1 weeks notice.
-- Support for Azimuth related issues is only offered during regular working hours, with not out of hours support currently being offered.
+- Support for Azimuth related issues is only offered during regular working hours, with no out of hours support currently being offered.
 - For any issues for feedback please contact us via STFC Cloud Support: [cloud-support@stfc.ac.uk](mailto:cloud-support@stfc.ac.uk)
 - Please read the STFC Cloud Azimuth Platform SLA before use: [Link]
 
 ## Accessing
 Azimuth can be accessed here: [https://portal.apps.cape.stfc.ac.uk](https://portal.apps.cape.stfc.ac.uk)
 
-You log in as you would normally to the STFC Cloud interface, using FEDID, IAM authentication (IRIS-IAM, or SKA-IAM).  This will then take you to a screen where you select which of your projects you want to work in.
+You log in as you would normally to the STFC Cloud interface, using FedID, IAM authentication (IRIS-IAM, or SKA-IAM).  This will then take you to a screen where you select which of your projects you want to work in.
 
 ## Platforms
 Platforms can be deployed directly from the Azimuth Platforms interface.
@@ -37,10 +37,10 @@ A multi-user DaskHub on Kubernetes. [Dask](https://docs.dask.org/en/stable/) is 
 [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) provides a declarative GitOps Continuous Delivery (CD) platform for Kubernetes clusters.
 
 ### [:logos-binderhub: BinderHub](platforms/kubernetes-applications/binderhub.md)
-[BinderHub](https://binderhub.readthedocs.io/en/latest/) allows a reproducable set of Jupyter notebooks to be deployed onto a JupyterHub deployment on a Kubernetes cluster.
+[BinderHub](https://binderhub.readthedocs.io/en/latest/) allows a reproducible set of Jupyter notebooks to be deployed onto a JupyterHub deployment on a Kubernetes cluster.
 
 ### [:simple-huggingface: HuggingFace-LLM](platforms/kubernetes-applications/huggingface-llm.md)
-A generative AI chatbot service backed by a [HuggingFace](https://huggingface.co/) model, exposed via a convinient web interface.
+A generative AI chatbot service backed by a [HuggingFace](https://huggingface.co/) model, exposed via a convenient web interface.
 
 ### [:logos-kubeflow: KubeFlow](platforms/kubernetes-applications/kubeflow.md)
 [KubeFlow](https://www.kubeflow.org/) is a machine learning toolkit for Kubernetes clusters, using Jupyter Notebooks and [TensorFlow](https://www.tensorflow.org/).

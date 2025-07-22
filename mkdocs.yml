@@ -7,21 +7,26 @@ nav:
   - 'Home': 'index.md'
   - 'Getting Started': 'getting-started/getting-started.md'
   - 'Platforms':
-    - 'Kubernetes': 'platforms/kubernetes.md'
-  - 'Kubernetes Applications': 
-    - 'JupyterHub': 
-      - 'Deploying JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
-    - 'DaskHub':
-      - 'Deploying DaskHub': 'platforms/kubernetes-applications/daskhub.md'
-    - 'ArgoCD':
-      - 'Deploying ArgoCD': 'platforms/kubernetes-applications/argocd.md'
-    - 'BinderHub':
-      - 'Deploying Binderhub': 'platforms/kubernetes-applications/binderhub.md'
-    - 'KubeFlow':
-      - 'Deploying KubeFlow': 'platforms/kubernetes-applications/kubeflow.md'
-    - 'HuggingFace LLM':
-      - 'Deploying HuggingFace LLM': 'platforms/kubernetes-applications/huggingface-llm.md'
-  - 'Usage': 'usage/usage.md'
+    - 'Kubernetes':
+      - 'Overview': 'platforms/kubernetes.md'
+      - 'Kubernetes Applications': 
+        - 'JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
+          # - 'Deploying JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
+        - 'DaskHub': 'platforms/kubernetes-applications/daskhub.md'
+          # - 'Deploying DaskHub': 'platforms/kubernetes-applications/daskhub.md'
+        - 'ArgoCD': 'platforms/kubernetes-applications/argocd.md'
+          # - 'Deploying ArgoCD': 'platforms/kubernetes-applications/argocd.md'
+        - 'BinderHub': 'platforms/kubernetes-applications/binderhub.md'
+          # - 'Deploying Binderhub': 'platforms/kubernetes-applications/binderhub.md'
+        - 'KubeFlow': 'platforms/kubernetes-applications/kubeflow.md'
+          # - 'Deploying KubeFlow': 'platforms/kubernetes-applications/kubeflow.md'
+        - 'HuggingFace LLM': 'platforms/kubernetes-applications/huggingface-llm.md'
+          # - 'Deploying HuggingFace LLM': 'platforms/kubernetes-applications/huggingface-llm.md'
+    # - 'Linux Workstation': 'platforms/linux-workstation.md'
+    # - 'Jupyter Notebook': 'platforms/jupyter-notebook.md'
+    # - 'Slurm': 'platforms/slurm.md'
+  - 'Identity Provider': 'identity_provider/identity_provider.md'
+  - 'Quotas': 'quotas/quotas.md'
   - 'Advanced':
     - 'Machines': 'advanced/machines.md'
     - 'Volumes': 'advanced/volumes.md'
@@ -30,7 +35,7 @@ theme:
   features:
     - navigation.tracking
   name: material
-  custom_dir: docs/overrides
+  custom_dir: docs/assets/overrides
   logo: assets/images/Cloud-Logo-Square.png
   favicon: assets/images/UKRI_STFC_Square_RGB.png
   palette:
@@ -66,9 +71,12 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
       options:
         custom_icons:
-          - docs/overrides/.icons
+          - docs/assets/overrides/.icons
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
-      
+  - glightbox

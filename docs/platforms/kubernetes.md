@@ -8,30 +8,31 @@ The Kubernetes platform provides a fully-featured Kubernetes container orchestra
 
 A [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) file for use with `helm` or `kubectl` is provided in platform **Details** after the platform has been launched.
 
+
 ### Launch configuration
 !!! Warning
 
     Platforms and their names are visible to all members of the cloud project!
 
-|**Option**                                | Explanation|
+|**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
 |**Cluster name**                         | A name to identify the Kubernetes cluster platform.|
-|**Cluster template**                      | The cluster template defines the deployed Kubernetes [version](https://kubernetes.io/releases/), alongside any cluster-specific customisations defined by the cloud operator. There may be multiple templates for each Kubernetes version, and you may need to consult the cloud operator's documentation for information on how these are customised.|
-|**Control Plane Size**                      | The size of the cloud instances to run the [Kubernetes control plane](https://kubernetes.io/docs/concepts/overview/components/#control-plane-components). The options in this menu are your available flavours in openstack, and the number of CPUs and quantity of RAM are displayed for each size.|
+|**Cluster template**                      | The cluster template defines the deployed Kubernetes [version](https://kubernetes.io/releases/), alongside any cluster-specific customisations defined by the cloud operator. We aim to keep the most recent minor versions. When older ones are removed, the cluster version will be marked Deprecated and can be [Upgraded](#patching-deployments).|
+|**Control plane size**                      | The size of the cloud instances to run the [Kubernetes control plane](https://kubernetes.io/docs/concepts/overview/components/#control-plane-components). The options in this menu are your available flavours in openstack, and the number of CPUs and quantity of RAM are displayed for each size.|
 
 #### Node groups
 !!! Info
     
     All Kubernetes clusters must contain a least one node group of [Kubernetes worker nodes](https://kubernetes.io/docs/concepts/architecture/nodes/).
 
-<!-- !!! Info
+!!! Info
     
-    If you are creating a Kubernetes cluster to use with [GPU-enabled Jupyter notebooks](kubernetes-applications/gpu-enabled-notebooks.md), be sure to select a Node Size that contains GPUs. -->
+    If you are creating a Kubernetes cluster to use with applications which require GPU, like HuggingFace LLM, be sure to select a Node Size that contains GPUs.
 
-|**Option**                                | Explanation|
+|**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
 |**Name**                         | A name to identify the node group. Names are available inside the Kubernetes cluster as [node labels](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#built-in-node-labels).|
-|**Node Size**                      | The size of the cloud instances that form the node group. The options in this menu are your available flavours in openstack, and the number of CPUs and quantity of RAM are displayed for each size. Cloud sizes may also dictate access to other hardware, such as GPUs or high-speed network interfaces.|
+|**Node size**                      | The size of the cloud instances that form the node group. The options in this menu are your available flavours in openstack, and the number of CPUs and quantity of RAM are displayed for each size. Cloud sizes may also dictate access to other hardware, such as GPUs or high-speed network interfaces.|
 |**Enable autoscaling for this node group?**                      | When autoscaling is **selected**, the amount of cloud instances in the node group will increase when existing resources are not sufficient to run the requested amount of pod resources. As the amount of requested pod resources declines, cloud instances are removed from the node group.<br/>When autoscaling is **not selected**, the size of the node group remains fixed.|
 |**Node Count**                      | When autoscaling is **selected**, the minimum and maximum amount of cloud instances to allow in this node group. When autoscaling is **not selected**, the fixed amount of cloud instances in this node group. |
 
@@ -44,7 +45,7 @@ A [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluste
 |**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
 |**Enable Kubernetes Dashboard?**                         | The [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) will be available from the platforms page.|
-|**Enable cluster monitoring?**                      | A [Grafana](https://grafana.com/oss/grafana/) instance with pre-configured dashboards for visualising cluster telemetry will be available from the platforms page.|
+|**Enable cluster monitoring?**                      | A [Grafana](https://grafana.com/oss/grafana/) instance with pre-configured dashboards for visualizing cluster telemetry will be available from the platforms page.|
 <!-- |**Enable applications dashboard?**                      | A dashboard for simple installation of [Kubernetes applications](../index.md#kubernetes-applications) will be available from the platforms page.| -->
 
 #### Advanced Options
@@ -55,8 +56,9 @@ A [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluste
 |**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
 |**Enable auto-healing?**                         | If enabled, the cluster will try to remediate unhealthy nodes automatically.|
-|**Enable Kubernetes Ingress?**                      | Allows the use of [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) to expose services in the cluster via a load balancer. **Requires an external IP for the load balancer.**|
-<!-- |**Enable cert-manager?**                      | Allows the use of [cert-manager](https://cert-manager.io/) to manage TLS certificates for cluster services.| -->
+|**Enable Kubernetes Ingress?**                      | Allows the use of [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) to expose services in the cluster via a load balancer. **Requires an external IP for the load balancer to be allocated in OpenStack.**|
+|**Metrics volume size**| The size of the openstack volume allocated to store cluster metrics. 10GB is a sensible default. Metrics are retained for 90 days, or until the volume is full, whichever happens first.|
+|**Logs volume size**| As above, but the size of the openstack volume used to store logs. 10GB is a sensible default. Logs are retained for only 72 hours. ^^Unlike metrics, if the volume is full, logs will no longer be recorded and existing volumes may become corrupted.^^|
 
 ### Accessing Deployments
 !!! Warning
@@ -73,9 +75,9 @@ If enabled under cluster addons, Monitoring or the Kubernetes Dashboard can also
     In cases where we require users to patch their Azimuth deployments, we will let users know through the usual STFC Cloud communications channels
 
 !!! Warning
-    This may cause your deployment to be rebuild, and may result in data loss.
+    This may cause your deployment to be rebuilt, and may result in data loss.
     Further testing (and feedback) is required to identify possible causes of data loss.
 
-The STFC Cloud team will periodically push changes to the Azimuth images and and deployments. In order to update your deployments with this click the orange `upgrade` button on your instance details. Machines that need patching will be outlined in red.
+The STFC Cloud team will periodically push changes to the Azimuth images and deployments. We aim to keep the most recent minor versions of Kubernetes. When older ones are removed, the cluster version will be marked Deprecated. In order to update your deployments, click the orange <img class="off-glb" src="../../assets/images/upgrade-button.svg" style="height:1em; vertical-align:middle;"> `Upgrade` button on your instance details. Machines that need patching, ones that are using deprecated versions, will be outlined in red.
 
-Changes can be made to cluster configurations using the green `update` button.
+Changes can be made to cluster configurations using the green <img class="off-glb" src="../../assets/images/update-button.svg" style="height:1em; vertical-align:middle;"> `Update` button; for example to make changes to node groups or enable additional addons.

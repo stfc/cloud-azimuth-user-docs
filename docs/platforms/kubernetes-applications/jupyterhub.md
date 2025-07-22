@@ -14,26 +14,46 @@ The JupyterHub Kubernetes application is provided as part of the Azimuth science
 The Applications dashboard shows both installed Applications and a Catalog of applications available for installation. The applications in the catalog are determined by your cloud operator. To learn more about the Applications dashboard, visit the Kubeapps [documentation](https://kubeapps.dev/docs/latest/howto/dashboard/).
 
 
-### Launch Process
-!!! Warning
+### Launch configuration
 
-    Before deploying Jupyterhub, ensure that you are working in the correct Kubernetes namespace, which is likely to be "default" unless you are an advanced user. View and change your current namespace using the "Current Context" dialog in the top-right of the Applications dashboard.
+To get started, in the Platforms tab, press the <img class="off-glb" src="../../../assets/images/new_platform.png" style="height:1em; vertical-align:middle;"> New Platform button, and select JupyterHub.
 
-1. Follow the Kubeapps [documentation](https://kubeapps.dev/docs/latest/howto/dashboard/) to deploy an application, selecting **jupyterhub-azimuth** as the application that you wish to deploy.
+|**Option**                                | **Explanation**|
+|------------------------------------------|---------------------------|
+|Platform name|A name to identify the JupyterHub platform|
+|Kubernetes cluster|The Kubernetes platform on which to deploy JupyterHub. If one hasn't already been created, check out the [Kubernetes Overview](../kubernetes.md).|
+|App version|The version of JupyterHub to use. As of writing, this is only the latest version|
+|Notebook CPUs|The number of CPUs to allocate to each user notebook.|
+|Notebook RAM|The amount of RAM to allocate to each user notebook.|
+|Notebook storage|The amount of disk storage to allocate to each user notebook.|
 
-1. When prompted, use the form to customise your deployment:
+### Using JupyterHub
+#### Accessing JupyterHub
+After creating the JupyterHub platform, it will automatically be exposed by Azimuth's Zenith proxy.
 
-    | Option | Explanation |
-    |--------|-------------|
-    | **Name** | A name for your JupyterHub deployment. Names must be unique per-namespace. |
-    | **JupyterHub identifier** | The name that your JupyterHub service will have in the Services list of your Kubernetes cluster. |
-    | **CPU guarantee for each single user notebook** | Singleuser notebooks will only launch on a Kubernetes worker node with this many free [CPUs](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-cpu). |
-    | **CPU limit for each single user notebook** | Singleuser notebooks will be limited to using this amount of [CPU](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-cpu). |
-    | **Memory guarantee for each single user notebook** | Singleuser notebooks will only launch on a Kubernetes worker node with this much free [memory](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-memory). |
-    | **Memory limit for each single user notebook** | Singleuser notebooks will be limited to using this amount of [memory](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-memory). |
-    | **Local storage capacity for each user notebook** | Singleuser notebooks will have cloud volumes (virtual disks) of this size attached to them. |
-    
-1. When you have completed the form, start the deployment.
+JupyterHub can be accessed via the link under Services.
+![The link is under Services](/assets/images/accessing_jupyterhub.png)
 
-1. After the deployment has completed, your JupyterHub instance is available from the Services menu of your Kubernetes cluster.
+Users should be prompted to start a server, and be given three default options. 
 
+!!! note
+    Further development will allow for a custom image and/or a whole custom repo-to-docker codebase to be used
+
+#### Profiles
+![Three default profiles are available](/assets/images/jupyter_profiles.png)
+
+|**Profile**                                | **Description**|
+|------------------------------------------|---------------------------|
+|[Python environment (minimal)](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook)|A minimally functional Jupyter server; with basic commandline tools, a TeX environment and Python (along with the Conda and Mamba package managers).|
+|[Data Science Notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook)|Contains [popular scientific Python packages](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook), [the R interpreter and a basic set of data science packages](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-r-notebook), [rpy2](https://rpy2.github.io/doc/latest/html/index.html), and the [Julia compiler along with notebook support and HDF5](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-julia-notebook).|
+|[GPU-enabled Machine Learning environment](https://github.com/iot-salzburg/gpu-jupyter)|Contains GPU support and drivers; along with TensorFlow, Keras, PyTorch, and everything in the above Data Science Notebook.|
+
+#### Server Hub
+To switch profile or restart the code server from JupyterLab, head to File -> Hub Control Panel.
+
+From there, the server may be stopped and relaunched.
+
+### Managing Users
+User management can be performed via the [Identity Provider, Keycloak](../../identity_provider/identity_provider.md).
+
+<!-- TODO: Add JHub-specific details here -->
