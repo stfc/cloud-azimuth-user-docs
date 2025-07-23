@@ -34,6 +34,8 @@ nav:
 theme:
   features:
     - navigation.tracking
+    - content.code.copy
+    - content.code.annotate
   name: material
   custom_dir: docs/assets/overrides
   logo: assets/images/Cloud-Logo-Square.png
@@ -75,6 +77,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - sane_lists
+  - footnotes
 
 plugins:
   - git-revision-date-localized:

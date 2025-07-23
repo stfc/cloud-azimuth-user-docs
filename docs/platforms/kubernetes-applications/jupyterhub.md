@@ -49,7 +49,7 @@ Users should be prompted to start a server, and be given three default options.
 |[GPU-enabled Machine Learning environment](https://github.com/iot-salzburg/gpu-jupyter)|Contains GPU support and drivers; along with TensorFlow, Keras, PyTorch, and everything in the above Data Science Notebook.|
 
 #### Server Hub
-To switch profile or restart the code server from JupyterLab, head to File -> Hub Control Panel.
+To switch profile or restart the code server from JupyterLab, head to File → Hub Control Panel.
 
 From there, the server may be stopped and relaunched.
 
