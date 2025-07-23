@@ -32,7 +32,7 @@ To get started, in the Platforms tab, press the <img class="off-glb" src="../../
 After creating the JupyterHub platform, it will automatically be exposed by Azimuth's Zenith proxy.
 
 JupyterHub can be accessed via the link under Services.
-![The link is under Services](/assets/images/accessing_jupyterhub.png)
+![The link is under Services](../../assets/images/accessing_jupyterhub.png)
 
 Users should be prompted to start a server, and be given three default options. 
 
@@ -40,7 +40,7 @@ Users should be prompted to start a server, and be given three default options.
     Further development will allow for a custom image and/or a whole custom repo-to-docker codebase to be used
 
 #### Profiles
-![Three default profiles are available](/assets/images/jupyter_profiles.png)
+![Three default profiles are available](../../assets/images/jupyter_profiles.png)
 
 |**Profile**                                | **Description**|
 |------------------------------------------|---------------------------|

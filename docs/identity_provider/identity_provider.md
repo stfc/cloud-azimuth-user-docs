@@ -32,7 +32,7 @@ Bulk Importing/Generating a set of users can be achieved via a partial import to
 
 Here is a simple process to do so:
 
-1. Download this helper script [csvToJsonConverterScript.sh](/assets/static/csvToJsonConverterScript.sh){:download="csvToJsonConverterScript"}
+1. Download this helper script [csvToJsonConverterScript.sh](../assets/static/csvToJsonConverterScript.sh){:download="csvToJsonConverterScript"}
 2. Set the script as executable with `chmod +x csvToJsonConverterScript.sh`
 3. Create a CSV file (in a spreadsheet editor, or a text editor), with the following format, i.e.:
 
@@ -57,11 +57,11 @@ Here is a simple process to do so:
 3. Run the script to generate an equivalent JSON file with `./csvToJsonConverterScript.sh <input_file> <output_file>`
     1. I.e. `./csvToJsonConverterScript.sh myCreatedUserCSV.csv someOutputJsonFile.json`
 4. On Keycloak, go to _Realm Settings_</br>
-![Realm Settings](/assets/images/keycloak-realm-settings.png){ loading=lazy }
+![Realm Settings](../assets/images/keycloak-realm-settings.png){ loading=lazy }
 5. Click _Actions_, then _Partial Import_ in the top left</br>
-![Partial Import button](/assets/images/keycloak-partial-import.png){ loading=lazy }
+![Partial Import button](../assets/images/keycloak-partial-import.png){ loading=lazy }
 6. Browse for and upload the JSON output, and check it for sanity, i.e. check the number of users, and the properties of the json
-![Importing users](/assets/images/keycloak-user-import.png){ loading=lazy }
+![Importing users](../assets/images/keycloak-user-import.png){ loading=lazy }
 7. Click import, and wait for it to complete
 8. Check the Users tab for the created users
 
@@ -113,7 +113,7 @@ As an overview of restricting access by `claim`, and Mappers, these steps will a
 3. For Essential claim, enter `groups`
    1. For other use cases, this can be any claim allowed by your set of OpenID scopes. See the INDIGO IAM documentation.
 4. Essential claim value can take a RegEx string. For example, `.*stfc-cloud.*` to require all users be in the `stfc-cloud` IAM group. Remember to properly escape RegEx characters
-![Essential Claim settings](/assets/images/keycloak-essential-claim.png){ loading=lazy }
+![Essential Claim settings](../assets/images/keycloak-essential-claim.png){ loading=lazy }
 5. At the top, visit the Mappers tab and press Add Mapper
 6. Since we have already verified they are in our allowed IAM group, you can select Hardcoded Group → Select your JupyterHub access group
    1. Alternately, there are more advanced mapper types, some of which themselves support RegEx requirements
