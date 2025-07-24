@@ -5,6 +5,8 @@ hide:
 
 STFC's Azimuth platform is powered by [Azimuth](https://github.com/azimuth-cloud/azimuth/), a self-service portal for managing cloud resources with a particular focus on simplifying the use of cloud for scientific computing, high-performance computing (HPC) and artificial intelligence (AI).
 
+![Azimuth Dashboard](./assets/images/azimuth-dashboard.png){ loading=lazy }
+
 If this is your first visit to the Azimuth portal, or you would just like to know more about how to get access to a cloud project - [get started](#getting-started) with Azimuth science platforms.
 
 ## Disclaimer
@@ -32,6 +34,8 @@ Other users can be granted access to every or individual platforms and services 
 
 ## Platforms
 Platforms can be deployed directly from the Azimuth Platforms interface:
+
+![Azimuth Platforms](./assets/images/azimuth-platforms.png){ loading=lazy }
 
 ### [:simple-kubernetes: Kubernetes](platforms/kubernetes.md)
 A fully-featured [Kubernetes](https://kubernetes.io/) container orchestration cluster.
