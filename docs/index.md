@@ -5,7 +5,7 @@ hide:
 
 STFC's Azimuth platform is powered by [Azimuth](https://github.com/azimuth-cloud/azimuth/), a self-service portal for managing cloud resources with a particular focus on simplifying the use of cloud for scientific computing, high-performance computing (HPC) and artificial intelligence (AI).
 
-If this is your first visit to the Azimuth portal, or you would just like to know more about how to get access to a cloud project - [get started](getting-started/getting-started.md) with Azimuth science platforms.
+If this is your first visit to the Azimuth portal, or you would just like to know more about how to get access to a cloud project - [get started](#getting-started) with Azimuth science platforms.
 
 ## Disclaimer
 - The STFC Cloud Azimuth platform is still in development, therefore data loss could occur, and it is recommended that no data be stored on there that you do not wish to lose.
@@ -14,13 +14,24 @@ If this is your first visit to the Azimuth portal, or you would just like to kno
 - For any issues for feedback please contact us via STFC Cloud Support: [cloud-support@stfc.ac.uk](mailto:cloud-support@stfc.ac.uk)
 - Please read the STFC Cloud Azimuth Platform SLA before use: [Link]
 
-## Accessing
+## Getting Started
 Azimuth can be accessed here: [https://portal.apps.cape.stfc.ac.uk](https://portal.apps.cape.stfc.ac.uk)
 
 You log in as you would normally to the STFC Cloud interface, using FedID, IAM authentication (IRIS-IAM, or SKA-IAM).  This will then take you to a screen where you select which of your projects you want to work in.
 
+### Accessing Azimuth
+Access to an STFC Cloud OpenStack project is required for usage of Azimuth. 
+
+A cloud project (or cloud tenancy) is an organizational unit in the cloud to which users are assigned. Users can be members of one or more projects. 
+
+Cloud resources belong to a *project* and not a *user*. This means that all resources within a project are visible and editable by members of the project.
+
+To be allocated a cloud project, or to be granted access to an existing cloud project, please contact cloud support or your project coordinator.
+
+Other users can be granted access to every or individual platforms and services deployed on Azimuth, without having access to the Azimuth management dashboard itself, through the [Identity Provider](./identity_provider/identity_provider.md).
+
 ## Platforms
-Platforms can be deployed directly from the Azimuth Platforms interface.
+Platforms can be deployed directly from the Azimuth Platforms interface:
 
 ### [:simple-kubernetes: Kubernetes](platforms/kubernetes.md)
 A fully-featured [Kubernetes](https://kubernetes.io/) container orchestration cluster.

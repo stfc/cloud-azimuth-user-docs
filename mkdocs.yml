@@ -4,8 +4,7 @@ copyright: |
   Copyright &copy; 2025 Science and Technology Facilities Council</br>
 edit_uri: ''
 nav:
-  - 'Home': 'index.md'
-  - 'Getting Started': 'getting-started/getting-started.md'
+  - 'Introduction': 'index.md'
   - 'Platforms':
     - 'Kubernetes':
       - 'Overview': 'platforms/kubernetes.md'
