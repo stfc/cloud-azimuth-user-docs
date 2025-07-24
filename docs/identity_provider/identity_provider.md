@@ -21,11 +21,11 @@ Important concepts in Keycloak are Users, Clients, Realm Roles and Groups
 |Groups|	Collections of users within a realm that allow for bulk assignment of roles and permissions.</br>Each realm typically includes at least two groups: `admins` and `platform-users`, along with unique roles for each deployment.</br></br>`admins` have admin status for a realm, allowing them to perform actions on the Keycloak admin console.</br></br>`platform-users` are granted access to _every_ deployment in the realm.</br></br> Alternatively, the unique groups for each deployment can be used to grant access to a single deployment. Additionally, subgroups are created which can grant access to a single service under that deployment.|
 
 #### Groups Example
-Consider a Kubernetes cluster platform deployed under azimuth, `my-k8s-cluster`. Two services are exposed under it if enabled, "Kubernetes Dashboard" and "Monitoring".
+Consider a Kubernetes cluster platform deployed under azimuth, `my-binderhub`. Two services are exposed under it if enabled, BinderHub and JupyterHub.
 
 - `platform-users` have access to both services, and every other deployment in the tenancy.
-- Users in the `my-k8s-cluster` have access to both services, the Kubernetes Dashboard and monitoring, but no other deployments.
-- Users in the `my-k8s-cluster/kubernetes-dashboard-client` group have access to the Kubernetes Dashboard, but not monitoring.
+- Users in the `kubeapp-my-binderhub` have access to both services, BinderHub and JupyterHub, but no other deployments.
+- Users in the `kubeapp-my-binderhub/my-binderhub-binderhub-azimuth-jupyterhub` group have access to the JupyterHub, but not BinderHub.
 
 ### Bulk Importing Users
 Bulk Importing/Generating a set of users can be achieved via a partial import to your Keycloak realm.

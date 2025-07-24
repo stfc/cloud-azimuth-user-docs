@@ -61,6 +61,17 @@ A [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluste
 |**Logs volume size**| As above, but the size of the openstack volume used to store logs. 10GB is a sensible default. Logs are retained for only 72 hours. ^^Unlike metrics, if the volume is full, logs will no longer be recorded and existing volumes may become corrupted.^^|
 
 ### Accessing Deployments
+#### Cluster Deployment
+If the [Kubernetes Dashboard app](#cluster-addons) was installed, the easiest way to manage a cluster deployment is through the Kubernetes Dashboard link on the Details page for the cluster. Access to this can be managed through the [Azimuth Identity Provider](../identity_provider/identity_provider.md).
+
+Alternatively, for advanced users, the Kubeconfig for the cluster can be accessed from the Details page, using the button at the top.
+
+This can be used alongside tools like [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) or [helm](https://helm.sh/docs/intro/quickstart/) for cluster management.
+<!-- In order to authenticate with this Kubeconfig, [oidc-login](https://github.com/int128/kubelogin) might be required. -->
+<!-- COMMENT: I don't think OIDC is actually required as we are using the `openstack` authentication type, not oidc. -->
+
+To do so, the Kubeconfig should be downloaded, then the `KUBECONFIG` environment variable set to point to it. Alternatively, for permanent usage, it can be moved and renamed to a file named `config` at `$HOME/.kube/config`. For information on how to use Kubeconfig files, see the [kubernetes docs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/). 
+#### Kubernetes App Deployments
 !!! Warning
     Anyone with access to the project will be able to log into any of the Azimuth created deployments in the project
 
@@ -78,6 +89,6 @@ If enabled under cluster addons, Monitoring or the Kubernetes Dashboard can also
     This may cause your deployment to be rebuilt, and may result in data loss.
     Further testing (and feedback) is required to identify possible causes of data loss.
 
-The STFC Cloud team will periodically push changes to the Azimuth images and deployments. We aim to keep the most recent minor versions of Kubernetes. When older ones are removed, the cluster version will be marked Deprecated. In order to update your deployments, click the orange <img class="off-glb" src="../../assets/images/upgrade-button.svg" style="height:1em; vertical-align:middle;"> `Upgrade` button on your instance details. Machines that need patching, ones that are using deprecated versions, will be outlined in red.
+The STFC Cloud team will periodically push changes to the Azimuth images and deployments. We aim to keep the most recent minor versions of Kubernetes. When older ones are removed, the cluster version will be marked Deprecated. In order to update your deployments, click the orange <img loading="lazy" class="off-glb" src="../../assets/images/upgrade-button.svg" style="height:1em; vertical-align:middle;"> `Upgrade` button on your instance details. Machines that need patching, ones that are using deprecated versions, will be outlined in red.
 
-Changes can be made to cluster configurations using the green <img class="off-glb" src="../../assets/images/update-button.svg" style="height:1em; vertical-align:middle;"> `Update` button; for example to make changes to node groups or enable additional addons.
+Changes can be made to cluster configurations using the green <img loading="lazy" class="off-glb" src="../../assets/images/update-button.svg" style="height:1em; vertical-align:middle;"> `Update` button; for example to make changes to node groups or enable additional addons.

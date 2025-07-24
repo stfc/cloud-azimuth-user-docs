@@ -9,20 +9,22 @@ hide:
 ### Introduction
 [JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/) allows users to interact with a computing environment through a webpage. As most devices have access to a web browser, JupyterHub makes it is easy to provide and standardize the computing environment for a group of people (e.g., for a class of students or an analytics team). JupyterHub is a web-interface through which many "singleuser" Jupyter notebooks (one per user) may be launched.
 
-The JupyterHub Kubernetes application is provided as part of the Azimuth science platforms collection. It is installed using the Applications dashboard of an Kubernetes cluster, which is powered by [Kubeapps](https://kubeapps.dev/). The Applications dashboard is available from the Services list of your Kubernetes cluster.
+Upon accessing JupyterHub users are presented with a number of "Profiles": pre-installed Python, Julia and R environments aimed towards different use cases.
 
-The Applications dashboard shows both installed Applications and a Catalog of applications available for installation. The applications in the catalog are determined by your cloud operator. To learn more about the Applications dashboard, visit the Kubeapps [documentation](https://kubeapps.dev/docs/latest/howto/dashboard/).
+![JupyterHub](../../assets/images/jupyterhub.png){ loading=lazy }
+
+The JupyterHub Kubernetes application is installed using the Platforms dashboard of Azimuth, onto an existing Kubernetes Cluster deployment.
 
 
 ### Launch configuration
 
-To get started, in the Platforms tab, press the <img class="off-glb" src="../../../assets/images/new_platform.png" style="height:1em; vertical-align:middle;"> New Platform button, and select JupyterHub.
+To get started, in the Platforms tab, press the <img loading="lazy" class="off-glb" src="../../../assets/images/new_platform.png" style="height:1em; vertical-align:middle;"> New Platform button, and select JupyterHub.
 
 |**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
 |Platform name|A name to identify the JupyterHub platform|
 |Kubernetes cluster|The Kubernetes platform on which to deploy JupyterHub. If one hasn't already been created, check out the [Kubernetes Overview](../kubernetes.md).|
-|App version|The version of JupyterHub to use. As of writing, this is only the latest version|
+|App version|The version of the JupyterHub Azimuth application to use.|
 |Notebook CPUs|The number of CPUs to allocate to each user notebook.|
 |Notebook RAM|The amount of RAM to allocate to each user notebook.|
 |Notebook storage|The amount of disk storage to allocate to each user notebook.|
@@ -32,7 +34,7 @@ To get started, in the Platforms tab, press the <img class="off-glb" src="../../
 After creating the JupyterHub platform, it will automatically be exposed by Azimuth's Zenith proxy.
 
 JupyterHub can be accessed via the link under Services.
-![The link is under Services](../../assets/images/accessing_jupyterhub.png)
+![The link is under Services](../../assets/images/accessing_jupyterhub.png){ loading=lazy }
 
 Users should be prompted to start a server, and be given three default options. 
 
@@ -40,7 +42,7 @@ Users should be prompted to start a server, and be given three default options.
     Further development will allow for a custom image and/or a whole custom repo-to-docker codebase to be used
 
 #### Profiles
-![Three default profiles are available](../../assets/images/jupyter_profiles.png)
+![Three default profiles are available](../../assets/images/jupyter_profiles.png){ loading=lazy }
 
 |**Profile**                                | **Description**|
 |------------------------------------------|---------------------------|
@@ -56,4 +58,4 @@ From there, the server may be stopped and relaunched.
 ### Managing Users
 User management can be performed via the [Identity Provider, Keycloak](../../identity_provider/identity_provider.md).
 
-<!-- TODO: Add JHub-specific details here -->
+Access to JupyterHub can be granted by the platform or service specific Keycloak groups.
