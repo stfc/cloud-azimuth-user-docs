@@ -1,7 +1,7 @@
 :root  > * {
-  --md-primary-fg-color:        hsla(222.7,94%,54.5%, 1);
-  --md-primary-fg-color--light: hsla(222.7,94%,65%, 1);
-  --md-primary-fg-color--dark:  hsla(222.7,94%,35%, 1);
-  --md-accent-fg-color:                hsla(218.8,100%,26.7%, 1);
-  --md-accent-fg-color--transparent:   hsla(218.8,100%,26.7%, 0.1);
+  --md-primary-fg-color:        hsla(226.6,97.1%,59.2%, 1);
+  --md-primary-fg-color--light: hsla(226.6,97.1%,59.2%, 1);
+  --md-primary-fg-color--dark:  hsla(226.6,97.1%,59.2%, 1);
+  --md-accent-fg-color:                hsla(224.1,78.1%,30.4%, 1);
+  --md-accent-fg-color--transparent:   hsla(224.1,78.1%,30.4%, 0.1);
 }
