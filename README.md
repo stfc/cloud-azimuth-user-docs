@@ -1,5 +1,5 @@
 # STFC Cloud Azimuth Platform - User Docs
-[![deploy-pages](https://github.com/stfc/azimuth-user-docs/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/stfc/azimuth-user-docs/actions/workflows/deploy-pages.yml)
+[![deploy-pages](https://github.com/stfc/cloud-azimuth-user-docs/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/stfc/cloud-azimuth-user-docs/actions/workflows/deploy-pages.yml)
 [![Docs](https://img.shields.io/badge/docs-live-blue.svg)](https://stfc.github.io/azimuth-user-docs/)
 ![GitHub last commit](https://img.shields.io/github/last-commit/stfc/azimuth-user-docs)
 
