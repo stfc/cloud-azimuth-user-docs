@@ -1,7 +1,7 @@
 # STFC Cloud Azimuth Platform - User Docs
 [![deploy-pages](https://github.com/stfc/cloud-azimuth-user-docs/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/stfc/cloud-azimuth-user-docs/actions/workflows/deploy-pages.yml)
 [![Docs](https://img.shields.io/badge/docs-live-blue.svg)](https://stfc.github.io/cloud-azimuth-user-docs/)
-![GitHub last commit](https://img.shields.io/github/last-commit/stfc/cloud-azimuth-user-docs/)
+![GitHub last commit](https://img.shields.io/github/last-commit/stfc/cloud-azimuth-user-docs/main)
 
 These are the user docs for STFC Cloud's Azimuth deployment. They provide information for users specific to our deployment.
 
