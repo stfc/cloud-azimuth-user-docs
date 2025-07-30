@@ -22,3 +22,12 @@ In future, we will investigate a clearer way to alert users of this situation.
 Make use of [Auto Scaling](../platforms/kubernetes.md#node-groups) on Worker node groups to ensure Azimuth can properly scale more worker nodes as needed to fill CPU reservation requirements. Be aware that, due to the default set of required Cluster Addons, and default apps (Monitoring/Kubernetes Dashboard), even idle clusters may already have too much compute served to allow apps to run with only one worker node.
 
 If the maximum count of worker nodes has been autoscaled, that indicates Azimuth has a lot of compute reserved on this cluster. The maximum count should be increased, requesting an increase of OpenStack quota if required.
+
+## GPU Node Labels take some time to apply
+Newly created GPU-enabled node groups may take some time to apply relevant GPU-specific node labels.
+This may cause issues with some apps not properly detecting GPU availability.
+
+### Workaround
+You should wait 5-10 minutes after creating a GPU-enabled worker node for feature discovery and driver setup to finish running.
+
+You can follow the progress with `kubectl`. After connecting via the clusters kubeconfig, run `watch "kubectl get nodes -o=custom-columns=NAME:.metadata.name,GPUs:.status.capacity.'nvidia\.com/gpu'"` and wait for the worker node to show available capacity.
