@@ -30,6 +30,7 @@ nav:
   - 'Advanced':
     - 'Machines': 'advanced/machines.md'
     - 'Volumes': 'advanced/volumes.md'
+  - 'Known Issues': 'known_issues/known_issues.md'
 
 theme:
   features:
