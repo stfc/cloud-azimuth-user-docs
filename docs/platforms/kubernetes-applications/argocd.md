@@ -11,7 +11,9 @@ hide:
 
 ### Launch configuration
 
-To get started, in the Platforms tab, press the <img loading="lazy" class="off-glb" src="../../../assets/images/new_platform.png" style="height:1em; vertical-align:middle;"> New Platform button, and select ArgoCD.
+To get started, in the Platforms tab, press the <img loading="lazy" class="off-glb" src="../../../assets/images/new-platform-button.svg" style="height:1em; vertical-align:middle;"> New Platform button, and select ArgoCD.
+
+You will then be presented with launch configuration options to fill in:
 
 |**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|

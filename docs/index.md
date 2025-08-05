@@ -17,18 +17,18 @@ If this is your first visit to the Azimuth portal, or you would just like to kno
 - Please read the STFC Cloud Azimuth Platform SLA before use: [Link]
 
 ## Getting Started
+### Accessing Azimuth
 Azimuth can be accessed here: [https://portal.apps.cape.stfc.ac.uk](https://portal.apps.cape.stfc.ac.uk)
 
-You log in as you would normally to the STFC Cloud interface, using FedID, IAM authentication (IRIS-IAM, or SKA-IAM).  This will then take you to a screen where you select which of your projects you want to work in.
+Access to an STFC Cloud OpenStack project is required for usage of Azimuth.
 
-### Accessing Azimuth
-Access to an STFC Cloud OpenStack project is required for usage of Azimuth. 
+You log in as you would normally to the STFC Cloud OpenStack interface, using FedID or IAM authentication (IRIS-IAM, or SKA-IAM). This will then take you to a screen where you select which of your projects you want to work in.
 
 A cloud project (or cloud tenancy) is an organizational unit in the cloud to which users are assigned. Users can be members of one or more projects. 
 
 Cloud resources belong to a *project* and not a *user*. This means that all resources within a project are visible and editable by members of the project.
 
-To be allocated a cloud project, or to be granted access to an existing cloud project, please contact cloud support or your project coordinator.
+To be allocated a cloud project, or if you are unable to access an existing project when logging in with FedID or IAM as you usually would for OpenStack, please contact cloud support or your project coordinator.
 
 Other users can be granted access to every or individual platforms and services deployed on Azimuth, without having access to the Azimuth management dashboard itself, through the [Identity Provider](./identity_provider/identity_provider.md).
 

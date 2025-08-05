@@ -18,7 +18,9 @@ The JupyterHub Kubernetes application is installed using the Platforms dashboard
 
 ### Launch configuration
 
-To get started, in the Platforms tab, press the <img loading="lazy" class="off-glb" src="../../../assets/images/new_platform.png" style="height:1em; vertical-align:middle;"> New Platform button, and select JupyterHub.
+To get started, in the Platforms tab, press the <img loading="lazy" class="off-glb" src="../../../assets/images/new-platform-button.svg" style="height:1em; vertical-align:middle;"> New Platform button, and select JupyterHub.
+
+You will then be presented with launch configuration options to fill in:
 
 |**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
@@ -49,6 +51,9 @@ Users should be prompted to start a server, and be given three default options.
 |[Python environment (minimal)](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook)|A minimally functional Jupyter server; with basic commandline tools, a TeX environment and Python (along with the Conda and Mamba package managers).|
 |[Data Science Notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook)|Contains [popular scientific Python packages](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook), [the R interpreter and a basic set of data science packages](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-r-notebook), [rpy2](https://rpy2.github.io/doc/latest/html/index.html), and the [Julia compiler along with notebook support and HDF5](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-julia-notebook).|
 |[GPU-enabled Machine Learning environment](https://github.com/iot-salzburg/gpu-jupyter)|Contains GPU support and drivers; along with TensorFlow, Keras, PyTorch, and everything in the above Data Science Notebook.|
+
+!!! Warning
+    The `GPU-enabled Machine Learning environment` profile will only launch on clusters with a node group that has machines with a GPU-enabled flavour. It may take 10-15 minutes to launch this profile for the first time on a newly deployed GPU node. This is because Nvidia CUDA drivers are installed first automatically in the background, then the large ~8GB profile docker image needs to be downloaded and loaded.</br>While waiting, you may see a message saying "No Capacity" or "No Nodes match the affinity/selector". This is okay, so long as there is a GPU node group available.
 
 #### Server Hub
 To switch profile or restart the code server from JupyterLab, head to File → Hub Control Panel.
