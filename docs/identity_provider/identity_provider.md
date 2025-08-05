@@ -27,44 +27,6 @@ Consider a Kubernetes cluster platform deployed under azimuth, `my-binderhub`. T
 - Users in the `kubeapp-my-binderhub` have access to both services, BinderHub and JupyterHub, but no other deployments.
 - Users in the `kubeapp-my-binderhub/my-binderhub-binderhub-azimuth-jupyterhub` group have access to the JupyterHub, but not BinderHub.
 
-### Bulk Importing Users
-Bulk Importing/Generating a set of users can be achieved via a partial import to your Keycloak realm.
-
-Here is a simple process to do so:
-
-1. Download this helper script [csvToJsonConverterScript.sh](../assets/static/csvToJsonConverterScript.sh){:download="csvToJsonConverterScript"}
-2. Set the script as executable with `chmod +x csvToJsonConverterScript.sh`
-3. Create a CSV file (in a spreadsheet editor, or a text editor), with the following format, i.e.:
-
-  ``` js
-  username/*(1)!*/,firstName/*(2)!*/,lastName/*(3)!*/,email/*(4)!*/,password/*(5)!*/,temporary/*(6)!*/,require_idp_link/*(7)!*/,realmRoles/*(8)!*/,groups/*(9)!*/
-  mpython,Monty,Python,mpython@example.com,Password123,false,false,some_role,some_group
-  gzilla,God,Zilla,gzilla@example.com,Password456,true,true,some_role;some_second_role,some_group;some_second_group
-  ```
-
-   1. Username. If using IAM authentication, this should be FedID.
-   2. First Name
-   3. Last Name
-   4. Email Address
-   5. Initial Password
-   6. One of `true` or `false`. If `true`, the user will be prompted to change their password.
-   7. One of `true` or `false`. If `true`, the user will be prompted to connect their account to an identity provider, i.e. Azimuth's Keystone-based default provider, or a custom provider you have set up i.e. IAM.
-   8. A semicolon separated list of realm roles to assign to the user
-   9. A semicolon separated list of groups to assign to the user
-
-</nbsp>
-
-3. Run the script to generate an equivalent JSON file with `./csvToJsonConverterScript.sh <input_file> <output_file>`
-    1. I.e. `./csvToJsonConverterScript.sh myCreatedUserCSV.csv someOutputJsonFile.json`
-4. On Keycloak, go to _Realm Settings_</br>
-![Realm Settings](../assets/images/keycloak-realm-settings.png){ loading=lazy }
-5. Click _Actions_, then _Partial Import_ in the top left</br>
-![Partial Import button](../assets/images/keycloak-partial-import.png){ loading=lazy }
-6. Browse for and upload the JSON output, and check it for sanity, i.e. check the number of users, and the properties of the json
-![Importing users](../assets/images/keycloak-user-import.png){ loading=lazy }
-7. Click import, and wait for it to complete
-8. Check the Users tab for the created users
-
 ### Adding an IAM-Based Identity Provider
 !!! warning
     This process hasn't yet been fully tested and explored against user use cases. Please reach out with comments, improvements or issues; and carefully consider each step
