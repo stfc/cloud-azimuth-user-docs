@@ -27,6 +27,8 @@ Consider a Kubernetes cluster platform deployed under azimuth, `my-binderhub`. T
 - Users in the `kubeapp-my-binderhub` have access to both services, BinderHub and JupyterHub, but no other deployments.
 - Users in the `kubeapp-my-binderhub/my-binderhub-binderhub-azimuth-jupyterhub` group have access to the JupyterHub, but not BinderHub.
 
+**Admins can add users to these individual groups through the Keycloak dashboard, hence granting them access to individual services.**
+
 ### Bulk Importing Users
 Bulk Importing/Generating a set of users can be achieved via a partial import to your Keycloak realm.
 
