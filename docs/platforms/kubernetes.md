@@ -14,6 +14,9 @@ A [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluste
 
     Platforms and their names are visible to all members of the cloud project!
 
+!!! Bug
+    Azimuth currently incorrectly calculates quota predictions for new clusters. If a cluster doesn't fit within your quota, nodes may fail to create and become stuck in "Provisioning" or "Pending" without warning messages.</br>**Please manually ensure you have enough OpenStack quota for any created clusters**, especially Disk Volume and Network Security Groups quota, until this issue is resolved. As an additional issue, Azimuth's Quota tab doesn't include every quota limit. For the time being, check using [OpenStack's Web UI (Horizon)](https://openstack.stfc.ac.uk/project/).
+
 To get started, in the Platforms tab, press the <img loading="lazy" class="off-glb" src="../../assets/images/new-platform-button.svg" style="height:1em; vertical-align:middle;"> New Platform button, and select Kubernetes.
 
 Or, when prompted to select a Kubernetes cluster when deploying any other platform, one can be quickly made using the green plus button:
