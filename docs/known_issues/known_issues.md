@@ -31,3 +31,9 @@ This may cause issues with some apps not properly detecting GPU availability.
 You should wait 5-10 minutes after creating a GPU-enabled worker node for feature discovery and driver setup to finish running.
 
 You can follow the progress with `kubectl`. After connecting via the clusters kubeconfig, run `watch "kubectl get nodes -o=custom-columns=NAME:.metadata.name,GPUs:.status.capacity.'nvidia\.com/gpu'"` and wait for the worker node to show available capacity.
+
+## Quota Usage Estimates are Incorrect for Kubernetes Clusters
+Azimuth's estimates for quota usage when deploying or updating clusters are frequently incorrect, and do not consider every restricted resource type like Network Security Groups. This may mean clusters are deployed which will not successfully provision, with nodes getting stuck in Provisioning or Pending without obvious errors.
+
+### Workaround
+A temporary hotfix has been applied which should resolve quota estimation for CPU, RAM and Machine Count while we wait for a proper upstream fix. Users should manually and carefully check the remaining quotas via the OpenStack Web UI (Horizon), especially Disk Volume usage and the different Networking usage restrictions for example security groups count and security group rules count.
