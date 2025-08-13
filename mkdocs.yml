@@ -34,6 +34,9 @@ theme:
     - navigation.tracking
     - content.code.copy
     - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
   name: material
   custom_dir: docs/assets/overrides
   logo: assets/images/Cloud-Logo-Square.png
@@ -82,3 +85,4 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - glightbox
+  - search
