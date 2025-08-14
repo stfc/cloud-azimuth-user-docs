@@ -10,12 +10,12 @@ nav:
     - 'Kubernetes':
       - 'Overview': 'platforms/kubernetes.md'
       - 'Kubernetes Applications': 
-        - 'JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
-        - 'DaskHub': 'platforms/kubernetes-applications/daskhub.md'
         - 'ArgoCD': 'platforms/kubernetes-applications/argocd.md'
         - 'BinderHub': 'platforms/kubernetes-applications/binderhub.md'
-        - 'KubeFlow': 'platforms/kubernetes-applications/kubeflow.md'
+        - 'DaskHub': 'platforms/kubernetes-applications/daskhub.md'
         - 'HuggingFace LLM': 'platforms/kubernetes-applications/huggingface-llm.md'
+        - 'JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
+        - 'KubeFlow': 'platforms/kubernetes-applications/kubeflow.md'
       - 'Kubernetes Cluster Addons':
         - 'Kubernetes Dashboard': 'platforms/kubernetes-cluster-addons/kubernetes_dashboard.md'
         - 'Monitoring': 'platforms/kubernetes-cluster-addons/monitoring.md'

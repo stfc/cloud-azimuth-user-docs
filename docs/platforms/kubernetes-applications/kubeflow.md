@@ -4,7 +4,9 @@ hide:
 ---
 !!! Warning
 
-    Deploying KubeFlow requires an existing [Kubernetes cluster](../kubernetes.md), with 16GB+ of RAM and 12+ CPUs, ideally with a GPU-enabled node group.
+    Deploying KubeFlow requires an existing [Kubernetes cluster](../kubernetes.md) containing a node group with at least 16GB+ of RAM and 12+ CPUs, and ideally with a GPU.
+
+    Deployment takes a long time as many large images need to be pulled. Progress can be followed via the [Kubernetes Dashboard](../kubernetes-cluster-addons/kubernetes_dashboard.md) in the Workloads tab of the Kubeflow namespace, or via `kubectl`.
 
 ### Introduction
 [KubeFlow](https://www.kubeflow.org/) is a machine learning toolkit for Kubernetes clusters, using Jupyter Notebooks and [TensorFlow](https://www.tensorflow.org/).

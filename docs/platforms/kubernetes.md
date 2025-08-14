@@ -68,10 +68,13 @@ You will then be presented with launch configuration options to fill in:
     
     Advanced options are set to reasonable defaults and changing them may result in unexpected behaviour, including Kubernetes clusters failing to deploy. **Do not change these unless you know what you are doing!**
 
+!!! Warning
+    Volumes cannot be shrunk after they are created, care should be taken in sizing them sensibly if they are changed from the default size.
+
 |**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
 |**Enable auto-healing?**                         | If enabled, the cluster will try to remediate unhealthy nodes automatically.|
-|**Enable Kubernetes Ingress?**                      | Allows the use of [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) to expose services in the cluster via a load balancer. **Requires an external IP for the load balancer to be allocated in OpenStack.**|
+|**Enable Kubernetes Ingress?**                      | Installs a [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) to expose user-created services in the cluster via a load balancer. **Requires an external IP for the load balancer to be allocated in OpenStack.** This is not needed for the apps and platforms deployed by Azimuth as it exposes services automatically using its Zenith proxy, access controlled by the [Identity Provider, Keycloak](../identity_provider/identity_provider.md).|
 |**Metrics volume size**| The size of the openstack volume allocated to store cluster metrics. 10GB is a sensible default. Metrics are retained for 90 days, or until the volume is full, whichever happens first.|
 |**Logs volume size**| As above, but the size of the openstack volume used to store logs. 10GB is a sensible default. Logs are retained for only 72 hours. ^^Unlike metrics, if the volume is full, logs will no longer be recorded and existing volumes may become corrupted.^^|
 
