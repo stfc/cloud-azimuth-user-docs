@@ -112,13 +112,13 @@ Existing users from the Azimuth provider (i.e. yourself) should be prompted to l
 #### Manually Adding Users
 The default behaviour for new users logging in with IAM is to create them an account automatically. This user account can then be granted access to services manually via groups.
 
-Alternatively, a new user with their username and a temporary password can be created. When logging in for the first time with IAM, the account matching their username will link to it.
+Alternatively, users can be pre-created then connect their account to IAM upon first login. A new user with their username and a temporary password can be created and assigned groups. When logging in for the first time with IAM, the account matching their username will link to it.
 
 #### Restrict access to a certain IAM group, and assign a Keycloak group
-As stated above, the default behaviour for an unknown user is to automatically create a Keycloak account. As an overview of restricting access by `claim`, these steps will allow you to restrict login access to a specific IAM group. The same `claim` system can be used to restrict login based on other IAM claims.
+As stated above, the default behaviour for an unknown user is to automatically create a Keycloak account. Access to IAM can be restricted to users with a specific `claim`, for example IAM group or profile information like email address. The following example shows how to restrict login based on the `groups` claim.
 
 !!! Note
-    If an IAM group doesn't yet exist for your team, you should reach out to IRIS-IAM/SKA-IAM support for one to be created.
+    If an IAM group doesn't yet exist for your team, you should contact your IAM team for support in creating one.
 
 1. Under Keycloak → Identity Providers, open your custom OpenID identity provider for IAM
 2. Under Advanced Settings, enable "Verify essential Claim"
