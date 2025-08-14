@@ -16,6 +16,10 @@ A generative AI chatbot service backed by a [HuggingFace](https://huggingface.co
 
 To get started, in the Platforms tab, press the <img loading="lazy" class="off-glb" src="../../../assets/images/new-platform-button.svg" style="height:1em; vertical-align:middle;"> New Platform button, and select HuggingFace LLM.
 
+
+!!! Warning
+    Please be conscious of UKRI and the STFC's security policies when selecting a model. For example, DeepSeek cannot be used on the STFC Cloud Platform.
+
 You will then be presented with launch configuration options to fill in:
 
 |**Option**                                | **Explanation**|

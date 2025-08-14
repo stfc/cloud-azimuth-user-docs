@@ -21,4 +21,7 @@ You will then be presented with launch configuration options to fill in:
 |Kubernetes cluster|The Kubernetes platform on which to deploy ArgoCD. If one hasn't already been created, check out the [Kubernetes Overview](../kubernetes.md).|
 |App version|The version of the ArgoCD Azimuth Application to use.|
 
+### Accessing ArgoCD
+Once deployed, ArgoCD can be accessed in Details, using the link under Services.
+
 As the platform is already access controlled using the [Identity Provider](../../identity_provider/identity_provider.md), upon accessing ArgoCD, you will have full access without needing to login via ArgoCD's own login system.
