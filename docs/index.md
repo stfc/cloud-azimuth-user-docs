@@ -54,11 +54,8 @@ A multi-user DaskHub on Kubernetes. [Dask](https://docs.dask.org/en/stable/) is 
 ### [:logos-binderhub: BinderHub](platforms/kubernetes-applications/binderhub.md)
 [BinderHub](https://binderhub.readthedocs.io/en/latest/) allows a reproducible set of Jupyter notebooks to be deployed onto a JupyterHub deployment on a Kubernetes cluster.
 
-### [:simple-huggingface: HuggingFace-LLM](platforms/kubernetes-applications/huggingface-llm.md)
-A generative AI chatbot service backed by a [HuggingFace](https://huggingface.co/) model, exposed via a convenient web interface.
+<!-- ### [:simple-huggingface: HuggingFace-LLM](platforms/kubernetes-applications/huggingface-llm.md)
+A generative AI chatbot service backed by a [HuggingFace](https://huggingface.co/) model, exposed via a convenient web interface. -->
 
 ### [:logos-kubeflow: KubeFlow](platforms/kubernetes-applications/kubeflow.md)
 [KubeFlow](https://www.kubeflow.org/) is a machine learning toolkit for Kubernetes clusters, using Jupyter Notebooks and [TensorFlow](https://www.tensorflow.org/).
-
-<!-- TODO:
-Keycloak -->
