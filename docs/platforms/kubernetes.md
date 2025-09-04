@@ -40,9 +40,13 @@ You will then be presented with launch configuration options to fill in:
     More worker nodes may be needed to deploy more apps, or for some apps to operate especially when they reserve resources. For example, JupyterHub will try to reserve a CPU core for each Jupyter server, hence servers may fail to deploy without enough worker nodes.</br>
     To mitigate issues with having too few worker nodes, Autoscaling can be used as described below. If the maximum worker count is reached, this indicates you may need to increase this maximum limit to match load requirements. 
 
+<!-- !!! Info
+    
+    If you are creating a Kubernetes cluster to use with applications which require GPU, like HuggingFace LLM, be sure to select a Node Size that contains GPUs. -->
+
 !!! Info
     
-    If you are creating a Kubernetes cluster to use with applications which require GPU, like HuggingFace LLM, be sure to select a Node Size that contains GPUs.
+    If you are creating a Kubernetes cluster to use with applications which require GPU, be sure to select a Node Size that contains GPUs.
 
 |**Option**                                | **Explanation**|
 |------------------------------------------|---------------------------|
