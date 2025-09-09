@@ -44,11 +44,6 @@ A fully-featured [Kubernetes](https://kubernetes.io/) container orchestration cl
 
 ## Kubernetes Applications
 Kubernetes Applications require an existing [Kubernetes cluster](platforms/kubernetes.md) before they can be deployed.
-### [:simple-jupyter: JupyterHub](platforms/kubernetes-applications/jupyterhub.md)
-A multi-user JupyterHub on Kubernetes, powered by [zero-to-jupyterhub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).
-
-### [:simple-dask: DaskHub](platforms/kubernetes-applications/daskhub.md)
-A multi-user DaskHub on Kubernetes. [Dask](https://docs.dask.org/en/stable/) is a flexible library for parallel computing in Python.
 
 ### [:simple-argo: ArgoCD](platforms/kubernetes-applications/argocd.md)
 [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) provides a declarative GitOps Continuous Delivery (CD) platform for Kubernetes clusters.
@@ -56,8 +51,14 @@ A multi-user DaskHub on Kubernetes. [Dask](https://docs.dask.org/en/stable/) is 
 ### [:logos-binderhub: BinderHub](platforms/kubernetes-applications/binderhub.md)
 [BinderHub](https://binderhub.readthedocs.io/en/latest/) allows a reproducible set of Jupyter notebooks to be deployed onto a JupyterHub instance.
 
+### [:simple-dask: DaskHub](platforms/kubernetes-applications/daskhub.md)
+A multi-user DaskHub on Kubernetes. [Dask](https://docs.dask.org/en/stable/) is a flexible library for parallel computing in Python.
+
 <!-- ### [:simple-huggingface: HuggingFace-LLM](platforms/kubernetes-applications/huggingface-llm.md)
 A generative AI chatbot service backed by a [HuggingFace](https://huggingface.co/) model, exposed via a convenient web interface. -->
+
+### [:simple-jupyter: JupyterHub](platforms/kubernetes-applications/jupyterhub.md)
+A multi-user JupyterHub on Kubernetes, powered by [zero-to-jupyterhub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).
 
 ### [:logos-kubeflow: KubeFlow](platforms/kubernetes-applications/kubeflow.md)
 [KubeFlow](https://www.kubeflow.org/) is a machine learning toolkit for Kubernetes clusters, using Jupyter Notebooks and [TensorFlow](https://www.tensorflow.org/).
