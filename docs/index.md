@@ -24,7 +24,7 @@ Azimuth can be accessed here:
 
 Access to an STFC Cloud OpenStack project is required to use Azimuth.
 
-You log in as you would normally to the STFC Cloud OpenStack interface, either using FedID or IAM authentication (IRIS-IAM or SKA-IAM). This will then take you to a screen where you select which of your projects you want to work in.
+You log in as you would normally to the STFC Cloud OpenStack interface, either using FedID or IAM authentication. This will then take you to a screen where you select which of your projects you want to work in.
 
 A cloud project (or cloud tenancy) is an organizational unit in the cloud to which users are assigned. Users can be members of one or more projects. 
 
