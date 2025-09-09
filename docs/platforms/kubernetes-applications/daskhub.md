@@ -49,5 +49,4 @@ cluster
 ```
 
 If your Kubernetes cluster has autoscaling of nodes configured, this may cause the
-cluster itself to grow in size to accomodate your Dask cluster. Once you have finished
-with the Dask cluster, the Kubernetes nodes will scale back down again when possible.
+cluster itself to grow in size to accomodate your Dask cluster. Once you have finished with the Dask cluster, the Kubernetes nodes will scale back down again when possible.

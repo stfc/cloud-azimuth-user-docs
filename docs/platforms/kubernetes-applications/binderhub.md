@@ -7,7 +7,7 @@ hide:
     Deploying BinderHub requires an existing [Kubernetes cluster](../kubernetes.md).
 
 ### Introduction
-[BinderHub](https://binderhub.readthedocs.io/en/latest/) allows a reproducible set of Jupyter notebooks to be deployed onto a JupyterHub deployment from a Git repository, under a reproducible environment. When a user accesses a BinderHub instance, a Docker image is built from the Git repository's environment configuration (e.g. `requirements.txt`, `envionment.yaml`) and a temporary Jupyter notebook server is launched. This is useful for educators and researchers looking to make their code and corresponding data available to users through their web browser; to launch, edit and run without having to install anything locally. A public example can be found at https://mybinder.org/.
+[BinderHub](https://binderhub.readthedocs.io/en/latest/) allows a set of Jupyter notebooks to be deployed onto a JupyterHub instance from a Git repository, under a reproducible environment. When a user accesses a BinderHub instance, a Docker image is built from the Git repository's environment configuration (e.g. `requirements.txt`, `envionment.yaml`) and a temporary Jupyter notebook server is launched. This is useful for educators and researchers looking to make their code and corresponding data available to users through their web browser; to launch, edit and run without having to install anything locally. A public example can be found at https://mybinder.org/.
 
 ![BinderHub](../../assets/images/binderhub.png){ loading=lazy }
 
