@@ -28,7 +28,7 @@ You log in as you would normally to the STFC Cloud OpenStack interface, either u
 
 A cloud project (or cloud tenancy) is an organizational unit in the cloud to which users are assigned. Users can be members of one or more projects. 
 
-Cloud resources belong to a *project* and not a *user*. This means that all resources within a project are visible and editable by all members of the project.
+Cloud resources belong to a *project* and not a *user*. This means that all resources within a project are visible, editable and accessible by all members of the project.
 
 To be allocated a cloud project, or if you are unable to access an existing project when logging in with FedID or IAM as you usually would for OpenStack, please contact [cloud support](mailto:cloud-support@stfc.ac.uk) or your project coordinator.
 
