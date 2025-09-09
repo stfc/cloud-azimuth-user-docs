@@ -16,6 +16,7 @@ nav:
         - 'HuggingFace LLM': 'platforms/kubernetes-applications/huggingface-llm.md'
         - 'JupyterHub': 'platforms/kubernetes-applications/jupyterhub.md'
         - 'KubeFlow': 'platforms/kubernetes-applications/kubeflow.md'
+        # - 'HuggingFace LLM': 'platforms/kubernetes-applications/huggingface-llm.md'
       - 'Kubernetes Cluster Addons':
         - 'Kubernetes Dashboard': 'platforms/kubernetes-cluster-addons/kubernetes_dashboard.md'
         - 'Monitoring': 'platforms/kubernetes-cluster-addons/monitoring.md'

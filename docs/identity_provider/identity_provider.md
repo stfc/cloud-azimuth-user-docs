@@ -101,27 +101,44 @@ To set this up:
 18. Press Add
 19. Open the newly added provider
 20. Under OpenID Connect settings → Advanced, set "Scopes" to `openid profile email preferred_username`
-21. Press Save
+21. Under "Advanced Settings", set "First login flow override" to "azimuth first login"
+    1. This is important as this authentication flow disables the "Review Profile" step which is present in the default broker login flow. Otherwise, users could create new users with any username of their choice.
+22. Press Save
 
 You now have a minimally functional login provider, allowing user accounts to be linked to IAM.
 
 Existing users from the Azimuth provider (i.e. yourself) should be prompted to link their account to IAM when they log in.
 
+#### Manually Adding Users
+The default behaviour for new users logging in with IAM is to create them an account automatically. This user account can then be granted access to services manually via groups.
+
+Alternatively, users can be pre-created then connect their account to IAM upon first login. A new user with their username and a temporary password can be created and assigned groups. When logging in for the first time with IAM, the account matching their username will link to it.
+
 #### Restrict access to a certain IAM group, and assign a Keycloak group
-As an overview of restricting access by `claim`, and Mappers, these steps will allow you to restrict login access to a specific IAM group then give successful users a Keystone group to, for example, access JupyterHub
+As stated above, the default behaviour for an unknown user is to automatically create a Keycloak account. Access to IAM can be restricted to users with a specific `claim`, for example IAM group or profile information like email address. The following example shows how to restrict login based on the `groups` claim.
+
+!!! Note
+    If an IAM group doesn't yet exist for your team, you should contact your IAM team for support in creating one.
 
 1. Under Keycloak → Identity Providers, open your custom OpenID identity provider for IAM
 2. Under Advanced Settings, enable "Verify essential Claim"
 3. For Essential claim, enter `groups`
-   1. For other use cases, this can be any claim allowed by your set of OpenID scopes. See the INDIGO IAM documentation.
-4. Essential claim value can take a RegEx string. For example, `.*stfc-cloud.*` to require all users be in the `stfc-cloud` IAM group. Remember to properly escape RegEx characters
+      1. For other use cases, this can be any claim allowed by your set of OpenID scopes. See the INDIGO IAM documentation.
+4. Essential claim value can take a RegEx string. For example, `.*stfc-cloud.*` to require all users be in the `stfc-cloud` IAM group. Remember to properly escape RegEx characters, and be aware this example string allows for any group name that contains the sub-string `stfc-cloud`.
+
 ![Essential Claim settings](../assets/images/keycloak-essential-claim.png){ loading=lazy }
-5. At the top, visit the Mappers tab and press Add Mapper
-6. Since we have already verified they are in our allowed IAM group, you can select Hardcoded Group → Select your JupyterHub access group
-   1. Alternately, there are more advanced mapper types, some of which themselves support RegEx requirements
-   2. For example, to allow all users to login but only allow a certain IAM group to access JupyterHub:
-      1. Mapper type: Advanced Claim to Group
-      2. "Add Claims" → Key `groups`, value `.*stfc-cloud.*`
-      3. Enable "RegEx claim values"
-      4. Set the group to grant
-7. Press Save, after naming it
+
+
+#### Assign an IAM group to a Keycloak group
+In addition to restricting login based on `claim`, Mappers can be used to assign Keycloak groups or other user properties based on them. For example, to assign all users in the `stfc-cloud` group access to a service like JupyterHub
+
+1. Under Keycloak → Identity Providers, open your custom OpenID identity provider for IAM
+2. At the top, visit the Mappers tab and press Add Mapper
+3. If as above you have already restricted access via Essential Claim to your group, you can simply select Hardcoded Group → Select your JupyterHub access group
+      1. Alternately, there are more advanced mapper types, some of which themselves support RegEx requirements
+      2. For example, to allow all users to login but only allow a certain IAM group to access JupyterHub:
+         1. Mapper type: Advanced Claim to Group
+         2. "Add Claims" → Key `groups`, value `.*stfc-cloud.*`
+         3. Enable "RegEx claim values"
+         4. Set the JupyterHub service-specific group to grant at the bottom
+4. Press Save, after naming it
