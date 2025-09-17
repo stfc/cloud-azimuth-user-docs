@@ -28,6 +28,7 @@ nav:
     - 'Machines': 'advanced/machines.md'
     - 'Volumes': 'advanced/volumes.md'
   - 'Known Issues': 'known_issues/known_issues.md'
+  - 'Memorandum of Understanding': 'https://stfc.atlassian.net/wiki/spaces/CLOUDKB/pages/1000702963/Azimuth+Memorandum+of+Understanding+MOU'
 
 theme:
   features:

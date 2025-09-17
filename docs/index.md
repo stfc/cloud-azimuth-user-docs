@@ -14,7 +14,7 @@ If this is your first visit to the Azimuth portal, or you would just like to kno
 - Updates/patches of the platform may come at short notice, but we endeavour to inform users one week in advance whenever possible.
 - Support for Azimuth-related issues is only offered during regular working hours, out-of-hours support is not currently being provided.
 - For any issues or for feedback please contact us via STFC Cloud Support: [cloud-support@stfc.ac.uk](mailto:cloud-support@stfc.ac.uk)
-- Please read the STFC Cloud Azimuth Platform SLA before use: [Link]
+- Use during the early-access preview period is limited to parties of the [STFC Cloud Azimuth Platform Memorandum of Understanding](https://stfc.atlassian.net/wiki/spaces/CLOUDKB/pages/1000702963/Azimuth+Memorandum+of+Understanding+MOU)
 
 ## Getting Started
 ### Accessing Azimuth
